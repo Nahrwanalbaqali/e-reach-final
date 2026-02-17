@@ -1,23 +1,23 @@
 {
   "name": "e-reach",
   "version": "1.0.0",
-  "description": "",
-  "main": "public/script.js",
+  "description": "Study abroad consulting services",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShadaGhanem/e-reach.git"
+    "url": "https://github.com/Nahrwanalbaqali/e-reach-final.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nahrwan Albaqali",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/ShadaGhanem/e-reach/issues"
+    "url": "https://github.com/Nahrwanalbaqali/e-reach-final/issues"
   },
-  "homepage": "https://github.com/ShadaGhanem/e-reach#readme",
+  "homepage": "https://github.com/Nahrwanalbaqali/e-reach-final#readme",
   "dependencies": {
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
