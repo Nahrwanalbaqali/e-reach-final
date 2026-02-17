@@ -412,7 +412,7 @@ Confirm Booking
     ========================================= */
     async function sendDataToBackend(data, formElement, isModal = false) {
         try {
-            const response = await fetch("https://e-reach-consulting.onrender.com/contact", {
+            const response = await fetch("/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
