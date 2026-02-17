@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - E-Reach Consulting</title>
+<meta name="description" content="Get in touch with E-Reach Consulting for expert study abroad guidance.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.contact-page {
+    min-height: 100vh;
+    background: var(--bg-light);
+}
+
+.contact-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 80px 20px 60px;
+    text-align: center;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-main {
+    padding: 60px 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form-wrapper {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form-wrapper h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.info-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(19, 109, 236, 0.1);
+    color: var(--primary-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-icon .material-symbols-outlined {
+    font-size: 30px;
+}
+
+.info-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.info-content p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.info-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-content a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2.2rem;
+    }
+}
+</style>
+</head>
+<body class="contact-page">
+<!-- Header -->
+<header>
+<div class="container">
+<div class="header-content">
+<div class="logo">
+<img src="logo.png" alt="E-Reach Logo" class="logo-img">
+<h1>E-Reach Consulting</h1>
+</div>
+<nav>
+<a href="index.html" class="nav-link">Home</a>
+<a href="index.html#about" class="nav-link">About Us</a>
+<a href="index.html#services" class="nav-link">Services</a>
+<a href="contact.html" class="nav-link active">Contact</a>
+</nav>
+<button class="btn-primary">Book Consultation</button>
+</div>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="contact-hero">
+<div class="container">
+<h1>Get In Touch</h1>
+<p>Our expert consultants are ready to guide your university application journey. Reach out and let's start together.</p>
+</div>
+</section>
+
+<!-- Main Contact Section -->
+<section class="contact-main">
+<div class="contact-grid">
+<!-- Contact Form -->
+<div class="contact-form-wrapper">
+<h2>Send Us a Message</h2>
+<form id="contactForm" class="booking-form">
+<div class="form-group">
+<label for="contact-name">Full Name *</label>
+<input type="text" id="contact-name" name="name" required placeholder="Enter your full name">
+</div>
+<div class="form-group">
+<label for="contact-email">Email *</label>
+<input type="email" id="contact-email" name="email" required placeholder="your.email@example.com">
+</div>
+<div class="form-group">
+<label for="contact-phone">Phone Number *</label>
+<input type="tel" id="contact-phone" name="phone" required placeholder="+973 XXXX XXXX">
+</div>
+<div class="form-group">
+<label for="contact-subject">Subject *</label>
+<select id="contact-subject" name="subject" required>
+<option value="">Select a subject</option>
+<option value="general">General Inquiry</option>
+<option value="application">Application Support</option>
+<option value="scholarship">Scholarship Consultation</option>
+<option value="visa">Visa Assistance</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label for="contact-message">Message *</label>
+<textarea id="contact-message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+</div>
+<button type="submit" class="submit-btn">
+<span class="material-symbols-outlined">send</span>
+Send Message
+</button>
+</form>
+</div>
+
+<!-- Contact Information -->
+<div class="contact-info">
+<div class="info-card">
+<div class="info-icon">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div class="info-content">
+<h3>WhatsApp</h3>
+<p>Chat with us directly for quick responses</p>
+<a href="https://wa.me/97366356056" target="_blank">+973 6635 6056</a>
+</div>
+</div>
+
+<div class="info-card">
+<div class="info-icon">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="info-content">
+<h3>Office Location</h3>
+<p>Manama, Kingdom of Bahrain</p>
+</div>
+</div>
+
+<div class="info-card">
+<div class="info-icon">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="info-content">
+<h3>Working Hours</h3>
+<p>Sunday - Thursday: 9:00 AM - 6:00 PM<br>
+Saturday: 10:00 AM - 2:00 PM<br>
+Friday: Closed</p>
+</div>
+</div>
+
+<div class="info-card">
+<div class="info-icon">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div class="info-content">
+<h3>Quick Response</h3>
+<p>We typically respond within 24 hours on business days</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<div class="logo">
+<span class="material-symbols-outlined">school</span>
+<h2>E-Reach Consulting</h2>
+</div>
+<p>Helping students achieve their international education dreams</p>
+</div>
+<div class="footer-links">
+<div class="footer-column">
+<h4>Quick Links</h4>
+<a href="index.html">Home</a>
+<a href="index.html#about">About Us</a>
+<a href="index.html#services">Services</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="footer-column">
+<h4>Services</h4>
+<a href="index.html#services">Major Selection</a>
+<a href="index.html#services">University Recommendations</a>
+<a href="index.html#services">Application Support</a>
+<a href="index.html#services">Settlement Assistance</a>
+</div>
+<div class="footer-column">
+<h4>Contact</h4>
+<p class="footer-contact">
+<span class="material-symbols-outlined">call</span>
++973 6635 6056
+</p>
+<p class="footer-contact">
+<span class="material-symbols-outlined">location_on</span>
+Manama, Bahrain
+</p>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 E-Reach Consulting. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<!-- Booking Modal (same as index.html) -->
+<div id="bookingModal" class="modal">
+<div class="modal-content">
+<span class="modal-close">&times;</span>
+<div class="modal-header">
+<span class="material-symbols-outlined">event</span>
+<h2>Book Your Consultation</h2>
+<p>Fill in your details and we'll get back to you within 24 hours</p>
+</div>
+<form id="bookingForm" class="booking-form">
+<div class="form-group">
+<label for="name">Full Name *</label>
+<input type="text" id="name" name="name" required placeholder="Enter your full name">
+</div>
+<div class="form-group">
+<label for="phone">WhatsApp Number *</label>
+<input type="tel" id="phone" name="phone" required placeholder="+973 XXXX XXXX">
+</div>
+<div class="form-group">
+<label for="email">Email (Optional)</label>
+<input type="email" id="email" name="email" placeholder="your.email@example.com">
+</div>
+<div class="form-row">
+<div class="form-group">
+<label for="date">Preferred Date *</label>
+<input type="date" id="date" name="date" required>
+</div>
+<div class="form-group">
+<label for="time">Preferred Time *</label>
+<select id="time" name="time" required>
+<option value="">Select time</option>
+<option value="09:00">09:00 AM</option>
+<option value="10:00">10:00 AM</option>
+<option value="11:00">11:00 AM</option>
+<option value="12:00">12:00 PM</option>
+<option value="14:00">02:00 PM</option>
+<option value="15:00">03:00 PM</option>
+<option value="16:00">04:00 PM</option>
+<option value="17:00">05:00 PM</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label for="service">Service Interested In *</label>
+<select id="service" name="service" required>
+<option value="">Select service</option>
+<option value="major">Choosing the Right Major</option>
+<option value="university">University Recommendations</option>
+<option value="documents">Documents Preparation</option>
+<option value="application">Application Submission</option>
+<option value="travel">Travel Assistance</option>
+<option value="settlement">Settlement Support</option>
+</select>
+</div>
+<div class="form-group">
+<label for="notes">Additional Notes (Optional)</label>
+<textarea id="notes" name="notes" rows="3" placeholder="Any specific questions or requirements?"></textarea>
+</div>
+<button type="submit" class="submit-btn">
+<span class="material-symbols-outlined">check_circle</span>
+Confirm Booking
+</button>
+</form>
+</div>
+</div>
+
+<script>
+// Material Icons setup
+document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+    icon.style.fontVariationSettings = "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24";
+});
+
+// Booking Modal
+const modal = document.getElementById('bookingModal');
+const bookBtn = document.querySelector('.btn-primary');
+const closeBtn = document.querySelector('.modal-close');
+
+bookBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Set minimum date to today
+const dateInput = document.getElementById('date');
+const today = new Date().toISOString().split('T')[0];
+dateInput.setAttribute('min', today);
+
+// Booking Form submission
+document.getElementById('bookingForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value,
+        service: document.getElementById('service').value,
+        notes: document.getElementById('notes').value
+    };
+    
+    const message = `*New Consultation Booking*%0A%0A` +
+        `*Name:* ${formData.name}%0A` +
+        `*Phone:* ${formData.phone}%0A` +
+        `*Email:* ${formData.email || 'Not provided'}%0A` +
+        `*Preferred Date:* ${formData.date}%0A` +
+        `*Preferred Time:* ${formData.time}%0A` +
+        `*Service:* ${formData.service}%0A` +
+        `*Notes:* ${formData.notes || 'None'}`;
+    
+    window.open(`https://wa.me/97366356056?text=${message}`, '_blank');
+    
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    e.target.reset();
+    
+    alert('Thank you! Your booking request has been sent. We\'ll contact you shortly to confirm.');
+});
+
+// Contact Form submission
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('contact-name').value,
+        email: document.getElementById('contact-email').value,
+        phone: document.getElementById('contact-phone').value,
+        subject: document.getElementById('contact-subject').value,
+        message: document.getElementById('contact-message').value
+    };
+    
+    const message = `*New Contact Message*%0A%0A` +
+        `*Name:* ${formData.name}%0A` +
+        `*Email:* ${formData.email}%0A` +
+        `*Phone:* ${formData.phone}%0A` +
+        `*Subject:* ${formData.subject}%0A` +
+        `*Message:* ${formData.message}`;
+    
+    window.open(`https://wa.me/97366356056?text=${message}`, '_blank');
+    
+    e.target.reset();
+    
+    alert('Thank you for your message! We\'ll get back to you shortly.');
+});
+</script>
+</body>
+</html>
