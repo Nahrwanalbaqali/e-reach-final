@@ -387,7 +387,7 @@
     ========================================= */
     async function sendDataToBackend(data, formElement, isModal = false) {
         try {
-            const response = await fetch("http://localhost:5000/contact", {
+            const response = await fetch("https://e-reach-consulting.onrender.com/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
