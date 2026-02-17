@@ -7,7 +7,7 @@
 <meta name="description" content="Get in touch with E-Reach Consulting for expert study abroad guidance.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 <style>
 .contact-page {
     min-height: 100vh;
@@ -123,7 +123,7 @@
     .contact-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-hero h1 {
         font-size: 2.2rem;
     }
@@ -135,17 +135,17 @@
 <header>
 <div class="container">
 <div class="header-content">
-<div class="logo">
-<img src="logo.png" alt="E-Reach Logo" class="logo-img">
-<h1>E-Reach Consulting</h1>
-</div>
+    <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px;">
+        <img src="logo.png" alt="E-Reach Logo" class="logo-img">
+        <h1>E-Reach Consulting</h1>
+    </a>
 <nav>
 <a href="index.html" class="nav-link">Home</a>
 <a href="index.html#about" class="nav-link">About Us</a>
 <a href="index.html#services" class="nav-link">Services</a>
 <a href="contact.html" class="nav-link active">Contact</a>
 </nav>
-<button class="btn-primary">Book Consultation</button>
+<button type="button" class="btn-primary">Book Consultation</button>
 </div>
 </div>
 </header>
@@ -164,7 +164,7 @@
 <!-- Contact Form -->
 <div class="contact-form-wrapper">
 <h2>Send Us a Message</h2>
-<form id="contactForm" class="booking-form">
+    <form id="newContactForm" class="booking-form">
 <div class="form-group">
 <label for="contact-name">Full Name *</label>
 <input type="text" id="contact-name" name="name" required placeholder="Enter your full name">
@@ -286,9 +286,13 @@ Manama, Bahrain
 </div>
 </div>
 </div>
-<div class="footer-bottom">
-<p>&copy; 2026 E-Reach Consulting. All rights reserved.</p>
-</div>
+    <div class="footer-bottom">
+        <p>
+            &copy; 2026 E-Reach Consulting. All rights reserved.
+            <span style="margin: 0 10px;">|</span>
+            <a href="privacy.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Privacy Policy</a>
+        </p>
+    </div>
 </div>
 </footer>
 
@@ -350,6 +354,12 @@ Manama, Bahrain
 <label for="notes">Additional Notes (Optional)</label>
 <textarea id="notes" name="notes" rows="3" placeholder="Any specific questions or requirements?"></textarea>
 </div>
+    <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 20px;">
+        <input type="checkbox" id="consent" name="consent" required style="width: 20px; height: 20px; margin-top: 3px;">
+        <label for="consent" style="font-size: 0.9rem; line-height: 1.4; color: var(--text-medium);">
+            I have read and agree to the <a href="privacy.html" target="_blank" style="color: var(--primary-color);">Privacy Policy</a> and consent to the processing of my personal data for consultation booking and payment purposes.
+        </label>
+    </div>
 <button type="submit" class="submit-btn">
 <span class="material-symbols-outlined">check_circle</span>
 Confirm Booking
@@ -359,96 +369,118 @@ Confirm Booking
 </div>
 
 <script>
-// Material Icons setup
-document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-    icon.style.fontVariationSettings = "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24";
-});
+    /* =========================================
+       1. MODAL UI LOGIC (OPEN/CLOSE)
+    ========================================= */
+    const modal = document.getElementById('bookingModal');
+    const bookBtn = document.querySelector('.btn-primary');
+    const closeBtn = document.querySelector('.modal-close');
 
-// Booking Modal
-const modal = document.getElementById('bookingModal');
-const bookBtn = document.querySelector('.btn-primary');
-const closeBtn = document.querySelector('.modal-close');
-
-bookBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-});
-
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+    // Open Modal
+    if (bookBtn) {
+        bookBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        });
     }
-});
 
-// Set minimum date to today
-const dateInput = document.getElementById('date');
-const today = new Date().toISOString().split('T')[0];
-dateInput.setAttribute('min', today);
+    // Close Modal (X button)
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
 
-// Booking Form submission
-document.getElementById('bookingForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        date: document.getElementById('date').value,
-        time: document.getElementById('time').value,
-        service: document.getElementById('service').value,
-        notes: document.getElementById('notes').value
-    };
-    
-    const message = `*New Consultation Booking*%0A%0A` +
-        `*Name:* ${formData.name}%0A` +
-        `*Phone:* ${formData.phone}%0A` +
-        `*Email:* ${formData.email || 'Not provided'}%0A` +
-        `*Preferred Date:* ${formData.date}%0A` +
-        `*Preferred Time:* ${formData.time}%0A` +
-        `*Service:* ${formData.service}%0A` +
-        `*Notes:* ${formData.notes || 'None'}`;
-    
-    window.open(`https://wa.me/97366356056?text=${message}`, '_blank');
-    
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-    e.target.reset();
-    
-    alert('Thank you! Your booking request has been sent. We\'ll contact you shortly to confirm.');
-});
+    // Close Modal (Click outside)
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
 
-// Contact Form submission
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('contact-name').value,
-        email: document.getElementById('contact-email').value,
-        phone: document.getElementById('contact-phone').value,
-        subject: document.getElementById('contact-subject').value,
-        message: document.getElementById('contact-message').value
-    };
-    
-    const message = `*New Contact Message*%0A%0A` +
-        `*Name:* ${formData.name}%0A` +
-        `*Email:* ${formData.email}%0A` +
-        `*Phone:* ${formData.phone}%0A` +
-        `*Subject:* ${formData.subject}%0A` +
-        `*Message:* ${formData.message}`;
-    
-    window.open(`https://wa.me/97366356056?text=${message}`, '_blank');
-    
-    e.target.reset();
-    
-    alert('Thank you for your message! We\'ll get back to you shortly.');
-});
+    // Set Date Input Min Value to Today
+    const dateInput = document.getElementById('date');
+    if (dateInput) {
+        dateInput.min = new Date().toISOString().split('T')[0];
+    }
+
+    /* =========================================
+       2. REUSABLE FUNCTION TO SEND DATA
+    ========================================= */
+    async function sendDataToBackend(data, formElement, isModal = false) {
+        try {
+            const response = await fetch("http://localhost:5000/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert("✅ Message received! We’ll contact you shortly.");
+                formElement.reset(); // Clear the form
+
+                if (isModal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            } else {
+                alert("❌ Server error. Please try again.");
+            }
+        } catch (err) {
+            console.error("Connection Error:", err);
+            alert("❌ Could not connect to the server. Is it running?");
+        }
+    }
+
+    /* =========================================
+       3. HANDLE "BOOKING" FORM (IN MODAL)
+    ========================================= */
+    const bookingForm = document.getElementById('bookingForm');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const data = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value || "Not provided",
+                subject: "Consultation Booking",
+                message: `
+                    Date: ${document.getElementById('date').value}
+                    Time: ${document.getElementById('time').value}
+                    Service: ${document.getElementById('service').value}
+                    Notes: ${document.getElementById('notes').value || "None"}
+                `
+            };
+
+            sendDataToBackend(data, bookingForm, true); // true = close modal after
+        });
+    }
+
+    /* =========================================
+       4. HANDLE "MAIN CONTACT" FORM (ON PAGE)
+    ========================================= */
+    const mainForm = document.getElementById('newContactForm');    if (mainForm) {
+        mainForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Note: We use the IDs from your HTML (contact-name, contact-email, etc.)
+            const data = {
+                name: document.getElementById('contact-name').value,
+                email: document.getElementById('contact-email').value,
+                phone: document.getElementById('contact-phone').value,
+                subject: document.getElementById('contact-subject').value,
+                message: document.getElementById('contact-message').value
+            };
+
+            sendDataToBackend(data, mainForm, false); // false = don't close modal
+        });
+    }
 </script>
 </body>
 </html>

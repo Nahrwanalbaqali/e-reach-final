@@ -1,0 +1,29 @@
+{
+  "name": "e-reach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/script.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShadaGhanem/e-reach.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ShadaGhanem/e-reach/issues"
+  },
+  "homepage": "https://github.com/ShadaGhanem/e-reach#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.1",
+    "stripe": "^20.3.1"
+  }
+}
