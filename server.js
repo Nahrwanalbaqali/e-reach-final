@@ -37,7 +37,7 @@ app.get("/index.html", (req, res) => res.sendFile(path.join(__dirname, "index.ht
 app.get("/contact.html", (req, res) => res.sendFile(path.join(__dirname, "contact.html")));
 app.get("/services.html", (req, res) => res.sendFile(path.join(__dirname, "services.html")));
 app.get("/privacy.html", (req, res) => res.sendFile(path.join(__dirname, "privacy.html")));
-
+app.get("/terms.html", (req, res) => res.sendFile(path.join(__dirname, "terms.html")));
 // ===========================
 //    CONTACT FORM ROUTE
 // ===========================
