@@ -1,74 +1,64 @@
-require('dotenv').config(); // 1. Load secrets from .env file
-const express = require("express");
-const cors = require("cors");
-const fs = require("fs");
-const path = require("path");
-const nodemailer = require("nodemailer");
+const express = require('express');
+const nodemailer = require('nodemailer');
+const cors = require('cors');
+const path = require('path');
+require('dotenv').config();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(express.static(path.join(__dirname, "public")));
-
-// 2. Use a dynamic PORT provided by the hosting service
 const PORT = process.env.PORT || 5000;
 
-// ===========================
-//  GODADDY EMAIL CONFIGURATION
-// ===========================
-const transporter = nodemailer.createTransport({
-    host: "smtpout.secureserver.net",
-    port: 465,
-    secure: true,
-    auth: {
-        // 3. Use secrets instead of typing your password here
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.static('public'));
+
+// Serve the main page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// ===========================
-//       PAGE ROUTES
-// ===========================
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
-app.get("/index.html", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
-app.get("/contact.html", (req, res) => res.sendFile(path.join(__dirname, "contact.html")));
-app.get("/services.html", (req, res) => res.sendFile(path.join(__dirname, "services.html")));
-app.get("/privacy.html", (req, res) => res.sendFile(path.join(__dirname, "privacy.html")));
-app.get("/terms.html", (req, res) => res.sendFile(path.join(__dirname, "terms.html")));
-// ===========================
-//    CONTACT FORM ROUTE
-// ===========================
-app.post("/contact", (req, res) => {
-    const { name, email, phone, subject, message, consent } = req.body;
+// Serve the other pages explicitly (fixes 404s)
+app.get('/contact.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'contact.html')));
+app.get('/services.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'services.html')));
+app.get('/privacy.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'privacy.html')));
+app.get('/terms.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'terms.html')));
+
+// Handle the Contact Form
+app.post('/contact', (req, res) => {
+    console.log("Form received! Processing...");
+
+    // Setup the email sender (GoDaddy settings)
+    const transporter = nodemailer.createTransport({
+        host: "smtpout.secureserver.net",
+        secure: true,
+        port: 465,
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
+        }
+    });
 
     const mailOptions = {
-        from: `"Website Booking" <${process.env.EMAIL_USER}>`,
-        to: process.env.EMAIL_USER,
-        replyTo: email,
-        subject: `New Consultation: ${name} - ${subject}`,
+        from: process.env.EMAIL_USER,
+        to: 'Team@ereach.education', // Where you receive the alerts
+        subject: `New Request: ${req.body.subject || 'Consultation Booking'}`,
         text: `
-        🚀 NEW BOOKING RECEIVED!
-        ------------------------
-        Name: ${name}
-        Phone: ${phone}
-        Email: ${email}
-        Subject: ${subject}
-        Consent Given: ${consent ? "Yes" : "No"}
-        
-        Message:
-        ${message}
+            Name: ${req.body.name}
+            Email: ${req.body.email}
+            Phone: ${req.body.phone}
+            Service: ${req.body.service || 'N/A'}
+            Message: ${req.body.message || req.body.notes}
         `
     };
 
+    // Send the email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log("Error sending email:", error);
-            return res.status(500).json({ success: false, error: "Email failed" });
+            console.error("Email Failed:", error); // Shows the real error in Render logs
+            // Reply with JSON so the frontend doesn't crash
+            res.status(500).json({ success: false, error: error.message });
         } else {
-            console.log("Email sent: " + info.response);
+            console.log('Email sent successfully!');
             res.json({ success: true });
         }
     });
