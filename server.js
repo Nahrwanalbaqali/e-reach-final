@@ -27,17 +27,26 @@ app.get('/terms.html', (req, res) => res.sendFile(path.join(__dirname, 'public',
 app.post('/contact', (req, res) => {
     console.log("Form received! Processing...");
 
-    // Setup the email sender (Modern GoDaddy / Microsoft 365 settings)
+    // Setup the email sender (Forced Timeouts & Security bypass)
     const transporter = nodemailer.createTransport({
         host: "smtp.office365.com",
         port: 587,
-        secure: false, // Must be false for port 587
+        secure: false,
+        requireTLS: true,
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
         },
-        logger: true, // This will print exactly what GoDaddy says to your Render logs
-        debug: true
+        logger: true,
+        debug: true,
+        // FORCE it to stop hanging after 10 seconds
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 10000,
+        // Prevent strict security drop
+        tls: {
+            rejectUnauthorized: false
+        }
     });
 
     const mailOptions = {
