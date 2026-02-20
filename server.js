@@ -27,15 +27,17 @@ app.get('/terms.html', (req, res) => res.sendFile(path.join(__dirname, 'public',
 app.post('/contact', (req, res) => {
     console.log("Form received! Processing...");
 
-    // Setup the email sender (GoDaddy settings)
+    // Setup the email sender (Modern GoDaddy / Microsoft 365 settings)
     const transporter = nodemailer.createTransport({
-        host: "smtpout.secureserver.net",
-        secure: true,
-        port: 465,
+        host: "smtp.office365.com",
+        port: 587,
+        secure: false, // Must be false for port 587
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
-        }
+        },
+        logger: true, // This will print exactly what GoDaddy says to your Render logs
+        debug: true
     });
 
     const mailOptions = {
