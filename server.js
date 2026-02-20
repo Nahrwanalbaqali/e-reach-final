@@ -43,8 +43,9 @@ app.post('/contact', (req, res) => {
     });
 
     const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: 'Team@ereach.education', // Where you receive the alerts
+        from: process.env.EMAIL_USER, // The Brevo login
+        to: 'Team@ereach.education', // Where YOU receive the alerts
+        replyTo: req.body.email, // <--- ADD THIS LINE! (Lets you hit "Reply" to the student)
         subject: `New Request: ${req.body.subject || 'Consultation Booking'}`,
         text: `
             Name: ${req.body.name}
