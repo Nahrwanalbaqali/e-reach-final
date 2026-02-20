@@ -1,5 +1,4 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
@@ -23,40 +22,42 @@ app.get('/services.html', (req, res) => res.sendFile(path.join(__dirname, 'publi
 app.get('/privacy.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'privacy.html')));
 app.get('/terms.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'terms.html')));
 
-// Handle the Contact Form
-app.post('/contact', (req, res) => {
+// Handle the Contact Form (Notice the 'async' keyword added here!)
+app.post('/contact', async (req, res) => {
     console.log("Form received! Processing...");
 
-    // Setup the email sender (Explicit Gmail Settings)
-    const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
-            user: 'ereach.notifications@gmail.com', // PUT YOUR REAL GMAIL HERE
-            pass: 'frbekvhpddxkprvh' // PUT YOUR REAL 16-LETTER APP PASSWORD HERE
-        }
-    });
+    try {
+        // Send email via FormSubmit HTTP API (Bypasses Render's firewall entirely)
+        const response = await fetch('https://formsubmit.co/ajax/team@ereach.education', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                _subject: `New Website Lead: ${req.body.name}`, // The email subject
+                _replyto: req.body.email, // Lets the client hit "Reply" to the student
+                Name: req.body.name,
+                Email: req.body.email,
+                Phone: req.body.phone,
+                Service: req.body.service || 'N/A',
+                Message: req.body.message || req.body.notes
+            })
+        });
 
-    const mailOptions = {
-        from: process.env.EMAIL_USER, // Sent by Dummy Gmail
-        to: 'Team@ereach.education',  // RECEIVED by Client (They see this!)
-        replyTo: req.body.email,      // Hitting "Reply" goes to the Student
-        subject: `New Request: ${req.body.subject || 'Consultation Booking'}`,
-        text: `...` // (Your existing text code)
-    };
+        const data = await response.json();
 
-    // Send the email
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error("Email Failed:", error); // Shows the real error in Render logs
-            // Reply with JSON so the frontend doesn't crash
-            res.status(500).json({ success: false, error: error.message });
+        // Tell the frontend it worked!
+        if (data.success === "true" || data.success === true) {
+            res.status(200).json({ message: 'Message sent successfully!' });
         } else {
-            console.log('Email sent successfully!');
-            res.json({ success: true });
+            res.status(500).json({ message: 'Failed to send' });
         }
-    });
+    } catch (error) {
+        // This catches any weird network errors so your server doesn't crash
+        console.error("Fetch error:", error);
+        res.status(500).json({ message: 'Failed to send due to network error' });
+    }
 });
 
 app.listen(PORT, () => {
