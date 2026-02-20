@@ -452,19 +452,33 @@
     }
 
     /* =========================================
-       2. REUSABLE FUNCTION TO SEND DATA
+       2. REUSABLE FUNCTION TO SEND DATA (UPDATED FOR FORMSUBMIT)
     ========================================= */
     async function sendDataToBackend(data, formElement, isModal = false) {
+        // --- ADD THE ANTI-SPAM BYPASS AND EMAIL SETTINGS ---
+        data._captcha = "false"; // Stops the HTML puzzle from breaking your code
+        data._subject = data.subject ? `New E-Reach Lead: ${data.subject}` : "New Website Form Submission";
+
+        // If they provided an email, make sure hitting "Reply" goes to them!
+        if (data.email && data.email !== "Not provided") {
+            data._replyto = data.email;
+        }
+
         try {
-            const response = await fetch("/contact", {
+            // --- BYPASS RENDER SERVER ENTIRELY ---
+            const response = await fetch("https://formsubmit.co/ajax/team@ereach.education", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json" // Tells FormSubmit we want data back, not an HTML page
+                },
                 body: JSON.stringify(data)
             });
 
             const result = await response.json();
 
-            if (result.success) {
+            // FormSubmit returns { success: "true" }
+            if (result.success === "true" || result.success === true) {
                 alert("✅ Message received! We’ll contact you shortly.");
                 formElement.reset(); // Clear the form
 
@@ -477,7 +491,7 @@
             }
         } catch (err) {
             console.error("Connection Error:", err);
-            alert("❌ Could not connect to the server. Is it running?");
+            alert("❌ Could not connect. Please check your internet connection.");
         }
     }
 
@@ -495,10 +509,10 @@
                 email: document.getElementById('email').value || "Not provided",
                 subject: "Consultation Booking",
                 message: `
-                    Date: ${document.getElementById('date').value}
-                    Time: ${document.getElementById('time').value}
-                    Service: ${document.getElementById('service').value}
-                    Notes: ${document.getElementById('notes').value || "None"}
+Date: ${document.getElementById('date').value}
+Time: ${document.getElementById('time').value}
+Service: ${document.getElementById('service').value}
+Notes: ${document.getElementById('notes').value || "None"}
                 `
             };
 
@@ -509,7 +523,8 @@
     /* =========================================
        4. HANDLE "MAIN CONTACT" FORM (ON PAGE)
     ========================================= */
-    const mainForm = document.getElementById('newContactForm');    if (mainForm) {
+    const mainForm = document.getElementById('newContactForm');
+    if (mainForm) {
         mainForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
