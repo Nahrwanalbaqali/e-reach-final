@@ -27,12 +27,14 @@ app.get('/terms.html', (req, res) => res.sendFile(path.join(__dirname, 'public',
 app.post('/contact', (req, res) => {
     console.log("Form received! Processing...");
 
-    // Setup the email sender (Service Account - Bypasses Client Security)
+    // Setup the email sender (Explicit Gmail Settings)
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // true for port 465
         auth: {
-            user: process.env.EMAIL_USER, // The dummy Gmail
-            pass: process.env.EMAIL_PASS  // The Gmail App Password
+            user: process.env.EMAIL_USER, // Your dummy @gmail.com address
+            pass: process.env.EMAIL_PASS  // The 16-letter App Password (no spaces)
         }
     });
 
