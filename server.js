@@ -33,8 +33,8 @@ app.post('/contact', (req, res) => {
         port: 587,
         secure: false,
         auth: {
-            user: process.env.EMAIL_USER, // Your dummy @gmail.com address
-            pass: process.env.EMAIL_PASS  // The 16-letter App Password (no spaces)
+            user: 'ereach.notifications@gmail.com', // PUT YOUR REAL GMAIL HERE
+            pass: 'frbekvhpddxkprvh' // PUT YOUR REAL 16-LETTER APP PASSWORD HERE
         }
     });
 
