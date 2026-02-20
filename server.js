@@ -27,23 +27,16 @@ app.get('/terms.html', (req, res) => res.sendFile(path.join(__dirname, 'public',
 app.post('/contact', (req, res) => {
     console.log("Form received! Processing...");
 
-    // Setup the email sender (Forced Timeouts & Security bypass)
+    // Setup the email sender (Using Brevo Relay to bypass Microsoft Block)
     const transporter = nodemailer.createTransport({
-        host: "smtp.office365.com",
+        host: "smtp-relay.brevo.com",  // The new "Door"
         port: 587,
-        secure: false,
-        requireTLS: true,
+        secure: false, // true for 465, false for other ports
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
         },
-        logger: true,
-        debug: true,
-        // FORCE it to stop hanging after 10 seconds
-        connectionTimeout: 10000,
-        greetingTimeout: 10000,
-        socketTimeout: 10000,
-        // Prevent strict security drop
+        // These settings help ensure delivery
         tls: {
             rejectUnauthorized: false
         }
