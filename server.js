@@ -27,33 +27,21 @@ app.get('/terms.html', (req, res) => res.sendFile(path.join(__dirname, 'public',
 app.post('/contact', (req, res) => {
     console.log("Form received! Processing...");
 
-    // Setup the email sender (Using Brevo Relay to bypass Microsoft Block)
+    // Setup the email sender (Service Account - Bypasses Client Security)
     const transporter = nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",  // The new "Door"
-        port: 2525,
-        secure: false, // true for 465, false for other ports
+        service: 'gmail',
         auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
-        },
-        // These settings help ensure delivery
-        tls: {
-            rejectUnauthorized: false
+            user: process.env.EMAIL_USER, // The dummy Gmail
+            pass: process.env.EMAIL_PASS  // The Gmail App Password
         }
     });
 
     const mailOptions = {
-        from: process.env.EMAIL_USER, // The Brevo login
-        to: 'Team@ereach.education', // Where YOU receive the alerts
-        replyTo: req.body.email, // <--- ADD THIS LINE! (Lets you hit "Reply" to the student)
+        from: process.env.EMAIL_USER, // Sent by Dummy Gmail
+        to: 'Team@ereach.education',  // RECEIVED by Client (They see this!)
+        replyTo: req.body.email,      // Hitting "Reply" goes to the Student
         subject: `New Request: ${req.body.subject || 'Consultation Booking'}`,
-        text: `
-            Name: ${req.body.name}
-            Email: ${req.body.email}
-            Phone: ${req.body.phone}
-            Service: ${req.body.service || 'N/A'}
-            Message: ${req.body.message || req.body.notes}
-        `
+        text: `...` // (Your existing text code)
     };
 
     // Send the email
