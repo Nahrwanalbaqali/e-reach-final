@@ -443,6 +443,7 @@ section {
     color: var(--text-medium);
     line-height: 1.7;
     margin-bottom: 1.5rem;
+    text-align: justify; /* This forces the crisp, straight edges! */
 }
 
 .service-link {
