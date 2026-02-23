@@ -1117,3 +1117,48 @@ footer {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+
+/* =========================================
+   MOBILE RESPONSIVENESS (PHONES & TABLETS)
+========================================= */
+@media (max-width: 768px) {
+    /* 1. Shrink the giant Services banner text */
+    .page-banner { padding: 60px 20px !important; }
+    .page-banner h1 { font-size: 2.2rem !important; }
+    .page-banner p { font-size: 1rem !important; }
+
+    /* 2. Stack the Services rows vertically */
+    .service-row {
+        gap: 30px !important;
+        margin-bottom: 60px !important;
+    }
+    .service-image-box {
+        padding: 40px !important;
+        min-width: 100% !important; /* Forces it to take the full width */
+    }
+
+    /* 3. Stack the Founders perfectly */
+    .founders-grid {
+        grid-template-columns: 1fr !important; /* Stacks them 1 on top of the other */
+    }
+    .founder-card {
+        padding: 30px 20px !important;
+    }
+
+    /* 4. Shrink the scrolling University Logos slightly so more fit on screen */
+    .ticker-track { gap: 40px !important; padding-right: 40px !important; }
+    .ticker-item { font-size: 1rem !important; gap: 10px !important; }
+    .uni-logo {
+        height: 35px !important;
+        max-height: 35px !important;
+        max-width: 120px !important;
+    }
+
+    /* 5. Fix the Contact Form layout */
+    .form-row {
+        grid-template-columns: 1fr !important; /* Stacks Date and Time boxes */
+    }
+    .contact-grid {
+        grid-template-columns: 1fr !important; /* Stacks the Form and the Contact Info */
+    }
+}
