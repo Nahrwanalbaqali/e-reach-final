@@ -4,83 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - E-Reach Consulting</title>
+    <meta name="description" content="Comprehensive support for your international education journey.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
     <style>
-        /* Specific Styles for Services Page */
-        .services-hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+        /* Smooth scrolling to jump beautifully to sections */
+        html { scroll-behavior: smooth; }
+
+        /* The giant background planes that fly downwards */
+        .bg-plane-down {
+            position: absolute;
+            font-size: 400px;
+            color: rgba(19, 109, 236, 0.03); /* Extremely faint so it doesn't block text */
+            z-index: -1;
+            animation: flyDownBg 20s linear infinite;
+            pointer-events: none;
+        }
+        .plane-1 { left: 5%; top: -20%; }
+        .plane-2 { right: 5%; top: -50%; animation-delay: 8s; animation-duration: 25s; }
+        .plane-3 { left: 30%; top: -80%; animation-delay: 4s; animation-duration: 18s; }
+
+        @keyframes flyDownBg {
+            0% { transform: translateY(-100vh) rotate(90deg); }
+            100% { transform: translateY(300vh) rotate(90deg); }
         }
 
-        .service-detail-section {
-            padding: 60px 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .service-detail-container {
-            max-width: 1000px;
-            margin: 0 auto;
+        /* Layout for the sliding service rows */
+        .service-row {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 100px;
         }
-
-        /* Alternate layout: text left/image right, then swap */
-        .service-detail-section:nth-child(even) .service-detail-container {
+        .service-row.reverse {
             flex-direction: row-reverse;
         }
-
         .service-text {
             flex: 1;
+            min-width: 300px;
         }
-
-        .service-text h2 {
-            font-size: 2rem;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .service-text p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--text-medium);
-            margin-bottom: 1.5rem;
-        }
-
-        .service-icon-large {
-            flex: 0 0 150px;
-            height: 150px;
-            background: #f0f7ff;
+        .service-image-box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 70px;
             border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-image-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(19, 109, 236, 0.15);
+        }
+        .service-icon-large {
+            font-size: 100px;
             color: var(--primary-color);
-        }
-
-        .service-icon-large .material-symbols-outlined {
-            font-size: 80px;
-        }
-
-        @media (max-width: 768px) {
-            .service-detail-container {
-                flex-direction: column !important;
-                text-align: center;
-            }
-            .service-text h2 {
-                justify-content: center;
-            }
         }
     </style>
 </head>
-<body>
+<body style="background-color: var(--bg-light); display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
 
 <header>
     <div class="container">
@@ -103,90 +90,90 @@
     </div>
 </header>
 
-<section class="services-hero">
+<section class="page-banner" style="position: relative; overflow: hidden; background: linear-gradient(-45deg, #0a4297, #136dec, #00d2ff, #2980b9); background-size: 400% 400%; animation: gradientBG 15s ease infinite; padding: 100px 20px; text-align: center; color: white;">
+    <span class="material-symbols-outlined flying-plane">flight</span>
+    <div class="container" style="position: relative; z-index: 2;" data-aos="zoom-in">
+        <h1 style="font-size: 3.5rem; margin-bottom: 15px; font-weight: 800;">Our Services</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">Comprehensive support for every step of your international education journey.</p>
+    </div>
+</section>
+
+<main style="flex: 1; position: relative; overflow: hidden; padding: 100px 0; z-index: 1;">
+
+    <span class="material-symbols-outlined bg-plane-down plane-1">flight</span>
+    <span class="material-symbols-outlined bg-plane-down plane-2">flight</span>
+    <span class="material-symbols-outlined bg-plane-down plane-3">flight</span>
+
     <div class="container">
-        <h1>Our Expertise</h1>
-        <p>Comprehensive support for every step of your international education journey.</p>
-    </div>
-</section>
 
-<section id="major" class="service-detail-section">
-    <div class="service-detail-container">
-        <div class="service-text">
-            <h2>Choosing the Right Major</h2>
-            <p>Not sure what to study? We analyze your academic strengths, personal interests, and future career goals to recommend the perfect major for you. We look at job market trends and university rankings to ensure your choice leads to success.</p>
-            <a href="contact.html" class="btn-primary">Get Advice</a>
+        <div id="major" class="service-row">
+            <div class="service-text" data-aos="fade-right">
+                <h2 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px;">Choosing the Right Major</h2>
+                <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 25px; font-size: 1.1rem;">Not sure what to study? We analyze your academic strengths, personal interests, and future career goals to recommend the perfect major for you. We look at job market trends and university rankings to ensure your choice leads to success.</p>
+                <a href="index.html#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">Get Advice</a>
+            </div>
+            <div class="service-image-box" data-aos="fade-left">
+                <span class="material-symbols-outlined service-icon-large">school</span>
+            </div>
         </div>
-        <div class="service-icon-large">
-            <span class="material-symbols-outlined">school</span>
-        </div>
-    </div>
-</section>
 
-<section id="university" class="service-detail-section">
-    <div class="service-detail-container">
-        <div class="service-text">
-            <h2>University Recommendations</h2>
-            <p>We don't just pick random schools. We curate a list of universities that match your grades, budget, and location preferences. Whether you aim for the Ivy League or specialized technical institutes, we find your best fit.</p>
-            <a href="contact.html" class="btn-primary">Find Universities</a>
+        <div id="university" class="service-row reverse">
+            <div class="service-text" data-aos="fade-left">
+                <h2 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px;">University Recommendations</h2>
+                <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 25px; font-size: 1.1rem;">We don't just pick random schools. We curate a list of universities that match your grades, budget, and location preferences. Whether you aim for the Ivy League or specialized technical institutes, we find your best fit.</p>
+                <a href="index.html#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">Find Universities</a>
+            </div>
+            <div class="service-image-box" data-aos="fade-right">
+                <span class="material-symbols-outlined service-icon-large">apartment</span>
+            </div>
         </div>
-        <div class="service-icon-large">
-            <span class="material-symbols-outlined">apartment</span>
-        </div>
-    </div>
-</section>
 
-<section id="documents" class="service-detail-section">
-    <div class="service-detail-container">
-        <div class="service-text">
-            <h2>Documents Preparation</h2>
-            <p>A great application needs great paperwork. We help you write compelling Personal Statements, format your CV/Resume, and guide you on how to get strong Letters of Recommendation. We ensure every document is error-free.</p>
-            <a href="contact.html" class="btn-primary">Start Preparing</a>
+        <div id="documents" class="service-row">
+            <div class="service-text" data-aos="fade-right">
+                <h2 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px;">Documents Preparation</h2>
+                <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 25px; font-size: 1.1rem;">A great application needs great paperwork. We help you write compelling Personal Statements, format your CV/Resume, and guide you on how to get strong Letters of Recommendation. We ensure every document is error-free.</p>
+                <a href="index.html#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">Start Preparing</a>
+            </div>
+            <div class="service-image-box" data-aos="fade-left">
+                <span class="material-symbols-outlined service-icon-large">description</span>
+            </div>
         </div>
-        <div class="service-icon-large">
-            <span class="material-symbols-outlined">description</span>
-        </div>
-    </div>
-</section>
 
-<section id="application" class="service-detail-section">
-    <div class="service-detail-container">
-        <div class="service-text">
-            <h2>Application Submission</h2>
-            <p>Deadlines are stressful. We manage the entire submission process for you. From filling out complex online portals (like CommonApp or UCAS) to paying fees and tracking status, we handle the logistics so you don't miss out.</p>
-            <a href="contact.html" class="btn-primary">Apply Now</a>
+        <div id="application" class="service-row reverse">
+            <div class="service-text" data-aos="fade-left">
+                <h2 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px;">Application Submission</h2>
+                <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 25px; font-size: 1.1rem;">Deadlines are stressful. We manage the entire submission process for you. From filling out complex online portals (like CommonApp or UCAS) to paying fees and tracking status, we handle the logistics so you don't miss out.</p>
+                <a href="index.html#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">Start Application</a>
+            </div>
+            <div class="service-image-box" data-aos="fade-right">
+                <span class="material-symbols-outlined service-icon-large">send</span>
+            </div>
         </div>
-        <div class="service-icon-large">
-            <span class="material-symbols-outlined">send</span>
-        </div>
-    </div>
-</section>
 
-<section id="travel" class="service-detail-section">
-    <div class="service-detail-container">
-        <div class="service-text">
-            <h2>Travel Assistance</h2>
-            <p>Once you are accepted, the journey begins! We assist with Student Visa applications (interview prep and forms), flight bookings, and travel insurance. We make sure you arrive safely and legally.</p>
-            <a href="contact.html" class="btn-primary">Plan Travel</a>
+        <div id="travel" class="service-row">
+            <div class="service-text" data-aos="fade-right">
+                <h2 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px;">Travel Assistance</h2>
+                <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 25px; font-size: 1.1rem;">Getting accepted is just the beginning. We provide guidance on booking student flights, packing essentials, and navigating airport procedures so you arrive at your destination safely and without stress.</p>
+                <a href="index.html#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">Plan Travel</a>
+            </div>
+            <div class="service-image-box" data-aos="fade-left">
+                <span class="material-symbols-outlined service-icon-large">flight</span>
+            </div>
         </div>
-        <div class="service-icon-large">
-            <span class="material-symbols-outlined">flight</span>
-        </div>
-    </div>
-</section>
 
-<section id="settlement" class="service-detail-section">
-    <div class="service-detail-container">
-        <div class="service-text">
-            <h2>Settlement Support</h2>
-            <p>Arriving in a new country is scary. We help you find student accommodation, understand local transportation, open bank accounts, and get a local SIM card. We ensure you feel at home from Day 1.</p>
-            <a href="contact.html" class="btn-primary">Get Support</a>
+        <div id="settlement" class="service-row reverse">
+            <div class="service-text" data-aos="fade-left">
+                <h2 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px;">Settlement Support</h2>
+                <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 25px; font-size: 1.1rem;">We make sure you feel at home. From helping you secure safe student accommodation to advising you on opening a local bank account and getting a phone plan, we support you as you settle into your new life.</p>
+                <a href="index.html#contact" class="btn-primary" style="text-decoration: none; display: inline-block;">Get Support</a>
+            </div>
+            <div class="service-image-box" data-aos="fade-right">
+                <span class="material-symbols-outlined service-icon-large">home</span>
+            </div>
         </div>
-        <div class="service-icon-large">
-            <span class="material-symbols-outlined">home</span>
-        </div>
+
     </div>
-</section>
+</main>
 
 <footer>
     <div class="container">
@@ -201,10 +188,17 @@
             <div class="footer-links">
                 <div class="footer-column">
                     <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
+                    <a href="index.html#home">Home</a>
                     <a href="index.html#about">About Us</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="#major">Major Selection</a>
+                    <a href="#university">University Recommendations</a>
+                    <a href="#application">Application Support</a>
+                    <a href="#settlement">Settlement Assistance</a>
                 </div>
                 <div class="footer-column">
                     <h4>Contact</h4>
@@ -230,6 +224,14 @@
         </div>
     </div>
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true, // Animations happen only once when scrolling down
+        offset: 100 // Starts the animation slightly before you reach it
+    });
+</script>
 
 </body>
 </html>

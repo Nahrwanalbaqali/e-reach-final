@@ -1054,3 +1054,46 @@ footer {
         transform: scale(1.5) rotate(30deg);
     }
 }
+
+/* =========================================
+   INFINITE SCROLLING UNIVERSITIES TICKER
+========================================= */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden; /* Hides the text that goes off the edge of the screen */
+    padding: 20px 0;
+    box-sizing: border-box;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Fades the edges out nicely */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.ticker-track {
+    display: inline-flex;
+    gap: 80px; /* Space between each university */
+    padding-right: 80px;
+    animation: tickerScroll 20s linear infinite; /* 20s speed, scrolls forever */
+    white-space: nowrap;
+}
+
+.ticker-track:hover {
+    animation-play-state: paused; /* Pauses the animation when someone hovers over it! */
+}
+
+.ticker-item {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #8c98a4; /* A sleek, professional grey color */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    cursor: default;
+}
+
+.ticker-item:hover {
+    color: var(--primary-color); /* Turns blue when hovered */
+}
+
+@keyframes tickerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
