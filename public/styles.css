@@ -1162,3 +1162,18 @@ footer {
         grid-template-columns: 1fr !important; /* Stacks the Form and the Contact Info */
     }
 }
+
+/* Center the Header Logo and Name on Mobile */
+@media (max-width: 768px) {
+    .logo {
+        justify-content: center !important;
+        width: 100% !important;
+    }
+    .header-content {
+        align-items: center !important;
+        text-align: center !important;
+    }
+    nav {
+        justify-content: center !important;
+    }
+}
