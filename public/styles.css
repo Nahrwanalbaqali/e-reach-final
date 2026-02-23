@@ -1020,3 +1020,37 @@ footer {
         padding: 1.5rem;
     }
 }
+
+/* =========================================
+   HERO ANIMATIONS (SKY & PLANE)
+========================================= */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.flying-plane {
+    position: absolute;
+    font-size: 250px; /* Massive plane */
+    color: rgba(255, 255, 255, 0.08); /* Very faint white so it doesn't distract from text */
+    animation: flyAcross 20s linear infinite; /* Takes 20 seconds to cross the screen */
+    z-index: 1;
+    pointer-events: none; /* Stops users from accidentally clicking the plane */
+}
+
+@keyframes flyAcross {
+    0% {
+        left: -300px;
+        top: 80%;
+        transform: scale(0.6) rotate(15deg);
+    }
+    50% {
+        top: 40%;
+    }
+    100% {
+        left: 120vw; /* Fly way off the right side of the screen */
+        top: -20%;
+        transform: scale(1.5) rotate(30deg);
+    }
+}

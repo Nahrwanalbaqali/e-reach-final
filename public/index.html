@@ -7,6 +7,7 @@
     <meta name="description" content="E-Reach Consulting helps students study abroad with honest, personalized, step-by-step guidance.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -32,9 +33,12 @@
 </header>
 
 <main>
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
+    <section id="home" class="hero" style="position: relative; overflow: hidden; background: linear-gradient(-45deg, #0a4297, #136dec, #00d2ff, #2980b9); background-size: 400% 400%; animation: gradientBG 15s ease infinite;">
+
+        <span class="material-symbols-outlined flying-plane">flight</span>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
                 <span class="badge">Your Trusted Partner Since Day One</span>
                 <h2 class="hero-title">Your Gateway to Global Education</h2>
                 <p class="hero-description">
@@ -50,12 +54,12 @@
 
     <section id="about" class="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Who We Are</span>
                 <h2 class="section-title">About E-Reach Consulting</h2>
                 <div class="title-underline"></div>
             </div>
-            <div class="about-content">
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
                 <p class="about-text">
                     With years of experience and a commitment to honest guidance, we've helped countless
                     students find their perfect academic fit and achieve their goals abroad.
@@ -70,30 +74,30 @@
 
             </div>
             <div class="why-choose">
-                <h3 class="subsection-title">Why Choose E-Reach?</h3>
+                <h3 class="subsection-title" data-aos="fade-up">Why Choose E-Reach?</h3>
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="feature-icon">
                             <span class="material-symbols-outlined">verified_user</span>
                         </div>
                         <h4>Honest Guidance</h4>
                         <p>We prioritize your best interests with transparent, ethical advice.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="feature-icon">
                             <span class="material-symbols-outlined">person</span>
                         </div>
                         <h4>Personalized Approach</h4>
                         <p>Every student is unique, and so is our support for your journey.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature-icon">
                             <span class="material-symbols-outlined">timeline</span>
                         </div>
                         <h4>Step-by-Step Support</h4>
                         <p>From start to finish, we're with you at every stage of the process.</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="feature-icon">
                             <span class="material-symbols-outlined">trending_up</span>
                         </div>
@@ -107,13 +111,13 @@
 
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <span class="section-label">What We Offer</span>
                 <h2 class="section-title">Our Services</h2>
                 <div class="title-underline"></div>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">
                         <span class="material-symbols-outlined">school</span>
                     </div>
@@ -124,7 +128,7 @@
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
                         <span class="material-symbols-outlined">apartment</span>
                     </div>
@@ -135,7 +139,7 @@
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
                         <span class="material-symbols-outlined">description</span>
                     </div>
@@ -146,7 +150,7 @@
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon">
                         <span class="material-symbols-outlined">send</span>
                     </div>
@@ -157,7 +161,7 @@
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="service-icon">
                         <span class="material-symbols-outlined">flight</span>
                     </div>
@@ -168,7 +172,7 @@
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="service-icon">
                         <span class="material-symbols-outlined">home</span>
                     </div>
@@ -185,7 +189,7 @@
 
     <section id="contact" class="contact" style="background-color: var(--bg-light); padding: 80px 20px;">
         <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
                 <span class="section-label" style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Get In Touch</span>
                 <h2 class="section-title" style="font-size: 2.5rem; color: var(--text-dark); margin-top: 10px;">Contact Us</h2>
                 <div class="title-underline" style="width: 60px; height: 4px; background: var(--primary-color); margin: 15px auto;"></div>
@@ -196,7 +200,7 @@
 
             <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: start;">
 
-                <div class="contact-form-wrapper" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div class="contact-form-wrapper" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" data-aos="fade-right">
                     <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-dark);">Send Us a Message</h3>
 
                     <form id="newContactForm" class="booking-form">
@@ -266,7 +270,7 @@
                     </form>
                 </div>
 
-                <div class="contact-info" style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="contact-info" style="display: flex; flex-direction: column; gap: 20px;" data-aos="fade-left">
                     <div class="info-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start;">
                         <div class="info-icon" style="background: rgba(19, 109, 236, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
                             <span class="material-symbols-outlined">chat</span>
@@ -306,7 +310,7 @@
         </div>
     </section>
 
-    <section class="universities">
+    <section class="universities" data-aos="fade-up">
         <div class="container">
             <p class="universities-label">Our Students Have Been Placed At</p>
             <div class="universities-grid">
@@ -440,6 +444,14 @@
         </form>
     </div>
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true, // Animations happen only once when scrolling down
+        offset: 100 // Starts the animation slightly before you reach it
+    });
+</script>
 
 <script>
     /* =========================================
