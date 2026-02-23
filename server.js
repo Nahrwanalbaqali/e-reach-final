@@ -21,7 +21,7 @@ app.get('/contact.html', (req, res) => res.sendFile(path.join(__dirname, 'public
 app.get('/services.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'services.html')));
 app.get('/privacy.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'privacy.html')));
 app.get('/terms.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'terms.html')));
-
+app.get('/founders.html', (req, res) => res.sendFile(path.join(__dirname, 'public', 'founders.html')));
 // Handle the Contact Form (Notice the 'async' keyword added here!)
 app.post('/contact', async (req, res) => {
     console.log("Form received! Processing...");
