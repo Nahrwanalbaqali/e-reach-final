@@ -37,7 +37,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px; /* This spreads the header and content out on big screens! */
     margin: 0 auto;
     padding: 0 20px;
 }
