@@ -181,7 +181,7 @@ nav {
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
+    max-width: 1000px; /* Changed from 800px to make the text wider */
     margin: 0 auto;
     animation: fadeInUp 0.8s ease-out;
 }
