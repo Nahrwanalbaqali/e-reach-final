@@ -27,8 +27,7 @@
                 <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
 
-            <a href="index.html#contact" class="btn-primary" style="text-decoration: none;">Book Consultation</a>
-        </div>
+            <a href="#" onclick="handlePayment(event, 20)" class="btn-primary" style="text-decoration: none;">Pay 20 BHD & Book</a>        </div>
     </div>
 </header>
 
@@ -638,6 +637,45 @@ Notes: ${document.getElementById('contact-notes').value || "None"}
 
             sendDataToBackend(data, mainForm, false);
         });
+    }
+</script>
+<script>
+    async function handlePayment(event, price) {
+        event.preventDefault(); // Stops the page from jumping
+        const btn = event.target;
+        const originalText = btn.innerText;
+
+        // Make the button look like it's loading
+        btn.innerText = "Connecting securely...";
+        btn.style.opacity = "0.7";
+        btn.style.pointerEvents = "none";
+
+        try {
+            // Ping your Node.js backend
+            const response = await fetch('/create-payment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount: price }) // Sends the price to the server
+            });
+
+            const data = await response.json();
+
+            // If the bank gave us a URL, send the student there!
+            if (data.checkoutUrl) {
+                window.location.href = data.checkoutUrl;
+            } else {
+                alert("Oops! Could not connect to the payment gateway. Please try again.");
+                btn.innerText = originalText;
+                btn.style.opacity = "1";
+                btn.style.pointerEvents = "auto";
+            }
+        } catch (error) {
+            console.error("Payment error:", error);
+            alert("Network error. Please check your connection.");
+            btn.innerText = originalText;
+            btn.style.opacity = "1";
+            btn.style.pointerEvents = "auto";
+        }
     }
 </script>
 </body>
