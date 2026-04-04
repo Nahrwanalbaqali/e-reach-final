@@ -201,7 +201,7 @@
                 <div class="contact-form-wrapper" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" data-aos="fade-right">
                     <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-dark);">Send Us a Message</h3>
 
-                    <form id="newContactForm" class="booking-form">
+                    <form id="mainContactForm" class="booking-form">
                         <div class="form-group" style="margin-bottom: 20px;">
                             <label for="contact-name" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Full Name *</label>
                             <input type="text" id="contact-name" name="name" required placeholder="Enter your full name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
@@ -238,14 +238,12 @@
 
                         <div class="form-group" style="margin-bottom: 20px;">
                             <label for="contact-service" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Service Interested In *</label>
-                            <select id="contact-service" name="service" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: white;">
-                                <option value="">Select service</option>
-                                <option value="major">Choosing the Right Major</option>
-                                <option value="university">University Recommendations</option>
-                                <option value="documents">Documents Preparation</option>
-                                <option value="application">Application Submission</option>
-                                <option value="travel">Travel Assistance</option>
-                                <option value="settlement">Settlement Support</option>
+                            <select id="contact-service" name="service" required onchange="updateMainButtonPrice()" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: white;">
+                                <option value="" disabled selected>Select service</option>
+                                <option value="Initial Consultation" data-price="20">Initial Consultation - 20 BHD</option>
+                                <option value="Private Tutoring" data-price="40">Private Tutoring - From 40 BHD</option>
+                                <option value="Membership Program" data-price="50">Membership Program - From 50 BHD</option>
+                                <option value="Custom Service" data-price="0">Custom Service - Request Quote</option>
                             </select>
                         </div>
 
@@ -261,9 +259,9 @@
                             </label>
                         </div>
 
-                        <button type="submit" class="submit-btn" style="width: 100%; padding: 14px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background 0.3s;">
+                        <button type="submit" id="main-checkout-btn" class="submit-btn" style="width: 100%; padding: 14px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background 0.3s;">
                             <span class="material-symbols-outlined">check_circle</span>
-                            Confirm Booking
+                            <span id="btn-text">Confirm Booking</span>
                         </button>
                     </form>
                 </div>
@@ -315,7 +313,6 @@
 
         <div class="ticker-wrap">
             <div class="ticker-track">
-
                 <div class="ticker-item">
                     <img src="leeds.png" alt="Leeds Logo" class="uni-logo">
                     <span>Leeds Beckett University</span>
@@ -344,39 +341,7 @@
                     <img src="Bahrain_Polytechnic_Logo.svg" alt="Bahrain Poly Logo" class="uni-logo">
                     <span>Bahrain Polytechnic</span>
                 </div>
-
-
-                <div class="ticker-item">
-                    <img src="leeds.png" alt="Leeds Logo" class="uni-logo">
-                    <span>Leeds Beckett University</span>
-                </div>
-                <div class="ticker-item">
-                    <img src="rcsi.jpg" alt="RCSI Logo" class="uni-logo">
-                    <span>RCSI</span>
-                </div>
-                <div class="ticker-item">
-                    <img src="tae-logo.png" alt="TAE Logo" class="uni-logo" onerror="this.style.display='none'">
-                    <span>TAE Aviation Academy</span>
-                </div>
-                <div class="ticker-item">
-                    <img src="alex.png" alt="Alexandria Logo" class="uni-logo">
-                    <span>Alexandria University</span>
-                </div>
-                <div class="ticker-item">
-                    <img src="hka.png" alt="Karlsruhe Logo" class="uni-logo">
-                    <span>Karlsruhe University of Applied Sciences</span>
-                </div>
-                <div class="ticker-item">
-                    <img src="University_of_Bahrain_logo.png" alt="UOB Logo" class="uni-logo">
-                    <span>University of Bahrain</span>
-                </div>
-                <div class="ticker-item">
-                    <img src="Bahrain_Polytechnic_Logo.svg" alt="Bahrain Poly Logo" class="uni-logo">
-                    <span>Bahrain Polytechnic</span>
-                </div>
-
             </div>
-        </div>
         </div>
     </section>
 </main>
@@ -433,124 +398,50 @@
     </div>
 </footer>
 
-<div id="bookingModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close">&times;</span>
-        <div class="modal-header">
-            <span class="material-symbols-outlined">event</span>
-            <h2>Book Your Consultation</h2>
-            <p>Fill in your details and we'll get back to you within 24 hours</p>
-        </div>
-        <form id="bookingForm" class="booking-form">
-            <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="Enter your full name">
-            </div>
-            <div class="form-group">
-                <label for="phone">WhatsApp Number *</label>
-                <input type="tel" id="phone" name="phone" required placeholder="+973 XXXX XXXX">
-            </div>
-            <div class="form-group">
-                <label for="email">Email (Optional)</label>
-                <input type="email" id="email" name="email" placeholder="your.email@example.com">
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="date">Preferred Date *</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Preferred Time *</label>
-                    <select id="time" name="time" required>
-                        <option value="">Select time</option>
-                        <option value="09:00">09:00 AM</option>
-                        <option value="10:00">10:00 AM</option>
-                        <option value="11:00">11:00 AM</option>
-                        <option value="12:00">12:00 PM</option>
-                        <option value="14:00">02:00 PM</option>
-                        <option value="15:00">03:00 PM</option>
-                        <option value="16:00">04:00 PM</option>
-                        <option value="17:00">05:00 PM</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="service">Service Interested In *</label>
-                <label for="service">Service Interested In *</label>
-                <select id="service" name="service" required onchange="updateButtonPrice()" style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 8px;">
-                    <option value="" disabled selected>Select service</option>
-                    <option value="Initial Consultation" data-price="20">Initial Consultation - 20 BHD</option>
-                    <option value="Private Tutoring" data-price="40">Private Tutoring - From 40 BHD</option>
-                    <option value="Membership Program" data-price="50">Membership Program - From 50 BHD</option>
-                    <option value="Custom Service" data-price="0">Custom Service - Request Quote</option>
-                </select>
-
-                <button type="submit" id="checkout-btn" class="btn-primary" style="width: 100%; margin-top: 10px;">Confirm Booking</button>
-            </div>
-            <div class="form-group">
-                <label for="notes">Additional Notes (Optional)</label>
-                <textarea id="notes" name="notes" rows="3" placeholder="Any specific questions or requirements?"></textarea>
-            </div>
-            <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 20px;">
-                <input type="checkbox" id="consent" name="consent" required style="width: 20px; height: 20px; margin-top: 3px;">
-                <label for="consent" style="font-size: 0.9rem; line-height: 1.4; color: var(--text-medium);">
-                    I have read and agree to the <a href="privacy.html" target="_blank" style="color: var(--primary-color);">Privacy Policy</a> and consent to the processing of my personal data for consultation booking purposes.
-                </label>
-            </div>
-            <button type="submit" class="submit-btn">
-                <span class="material-symbols-outlined">check_circle</span>
-                Confirm Booking
-            </button>
-        </form>
-    </div>
-</div>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
-        once: true, // Animations happen only once when scrolling down
-        offset: 100 // Starts the animation slightly before you reach it
+        once: true,
+        offset: 100
     });
 </script>
 
 <script>
-    // 1. This updates the button text when they pick a service
-    function updateButtonPrice() {
-        const select = document.getElementById("service");
+    function updateMainButtonPrice() {
+        const select = document.getElementById("contact-service");
         const price = select.options[select.selectedIndex].getAttribute("data-price");
-        const btn = document.getElementById("checkout-btn");
+        const btnText = document.getElementById("btn-text");
 
         if (price > 0) {
-            btn.innerText = `Pay ${price} BHD & Book`;
+            btnText.innerText = `Pay ${price} BHD & Book`;
         } else if (price == 0) {
-            btn.innerText = `Request Custom Quote`;
+            btnText.innerText = `Request Custom Quote`;
         } else {
-            btn.innerText = `Confirm Booking`;
+            btnText.innerText = `Confirm Booking`;
         }
     }
 
-    // 2. This handles the actual form submission
-    document.getElementById("booking-form").addEventListener("submit", async function(event) {
-        event.preventDefault(); // Stop the page from reloading
+    document.getElementById("mainContactForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
 
         const form = event.target;
-        const btn = document.getElementById("checkout-btn");
-        const originalText = btn.innerText;
+        const btn = document.getElementById("main-checkout-btn");
+        const btnText = document.getElementById("btn-text");
+        const originalText = btnText.innerText;
 
-        // Grab the data from the form
-        const select = document.getElementById("service");
+        const select = document.getElementById("contact-service");
         const price = select.options[select.selectedIndex].getAttribute("data-price");
         const name = form.querySelector('[name="name"]')?.value || "Student";
         const email = form.querySelector('[name="email"]')?.value || "student@ereach.education";
         const phone = form.querySelector('[name="phone"]')?.value || "N/A";
 
         // Make button look like it's loading
-        btn.innerText = "Processing...";
         btn.style.opacity = "0.7";
         btn.style.pointerEvents = "none";
+        btnText.innerText = "Processing...";
 
         try {
-            // FIRST: Send the email to you so you have their contact info!
+            // Send the email data first
             await fetch('/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -562,14 +453,14 @@
                 })
             });
 
-            // SECOND: Handle the Payment
+            // Handle Payment
             if (price == 0) {
-                // If it's a custom quote, don't charge them. Just show success!
                 alert("Request sent successfully! We will contact you on WhatsApp shortly to discuss your custom plan.");
                 form.reset();
-                updateButtonPrice();
+                updateMainButtonPrice();
+                btn.style.opacity = "1";
+                btn.style.pointerEvents = "auto";
             } else {
-                // Ask Tap for the checkout link
                 const payResponse = await fetch('/create-payment', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -579,18 +470,18 @@
                 const payData = await payResponse.json();
 
                 if (payData.checkoutUrl) {
-                    // Instantly redirect them to the Tap payment page!
                     window.location.href = payData.checkoutUrl;
                 } else {
                     alert("Payment link failed to generate, but we received your booking request! We will contact you shortly.");
+                    btnText.innerText = originalText;
+                    btn.style.opacity = "1";
+                    btn.style.pointerEvents = "auto";
                 }
             }
         } catch (error) {
             console.error("Error:", error);
             alert("Something went wrong. Please check your connection and try again.");
-        } finally {
-            // Reset button if they come back
-            btn.innerText = originalText;
+            btnText.innerText = originalText;
             btn.style.opacity = "1";
             btn.style.pointerEvents = "auto";
         }
