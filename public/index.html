@@ -1,460 +1,526 @@
-/* ==========================================================================
-CSS VARIABLES (Color Palette & Styling)
-========================================================================== */
-:root {
---primary-color: #136dec;
---primary-dark: #0a4297;
---secondary-color: #00d2ff;
---text-dark: #1a1f36;
---text-medium: #4f566b;
---text-light: #8792a2;
---bg-light: #f7f9fc;
---white: #ffffff;
---border-color: #e3e8ee;
---font-family: 'Inter', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Reach Consulting - Study Abroad Guidance</title>
+    <meta name="description" content="E-Reach Consulting helps students study abroad with honest, personalized, step-by-step guidance.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px; background: transparent; border: none; padding: 0;">
+                <img src="logo.png" alt="E-Reach Logo" style="height: 80px; width: auto; max-height: none; border-radius: 0; background: transparent; mix-blend-mode: multiply;">
+                <h1 style="margin: 0;">E-Reach Consulting</h1>
+            </a>
 
-/* ==========================================================================
-GLOBAL RESET
-========================================================================== */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: var(--font-family);
-}
+            <nav>
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="founders.html" class="nav-link">Founders</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
 
-body {
-background-color: var(--bg-light);
-color: var(--text-dark);
-line-height: 1.6;
-overflow-x: hidden; /* Prevents horizontal scrollbar from the flying plane */
-}
+            <a href="index.html#contact" class="btn-primary" style="text-decoration: none;">Book Consultation</a>    </div>
+</header>
 
-/* ==========================================================================
-LAYOUT CONTAINERS
-========================================================================== */
-.container {
-max-width: 1400px;
-margin: 0 auto;
-padding: 0 20px;
-}
+<main>
+    <section id="home" class="hero" style="position: relative; overflow: hidden; background: linear-gradient(-45deg, #0a4297, #136dec, #00d2ff, #2980b9); background-size: 400% 400%; animation: gradientBG 15s ease infinite;">
 
-/* ==========================================================================
-HEADER & NAVIGATION (Apple Glass Effect)
-========================================================================== */
-header {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-z-index: 1000;
-/* Apple Glass Effect */
-background: rgba(255, 255, 255, 0.75);
-backdrop-filter: blur(16px);
--webkit-backdrop-filter: blur(16px);
-border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-transition: all 0.3s ease;
-}
+        <span class="material-symbols-outlined flying-plane">flight</span>
 
-.header-content {
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 90px;
-}
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+                <span class="badge">Your Trusted Partner Since Day One</span>
+                <h2 class="hero-title" data-aos="fade-up" data-aos-duration="1500">Your Gateway to Global Education</h2>                <p class="hero-description">
+                    We help students study abroad by providing honest, personalized, step-by-step guidance to make your international education dreams a reality.
+                </p>
+                <a href="#contact" class="cta-button">
+                    Get Started Today
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-.logo img {
-height: 60px;
-width: auto;
-}
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">Who We Are</span>
+                <h2 class="section-title">About E-Reach Consulting</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+                <p class="about-text">
+                    With years of experience and a commitment to honest guidance, we've helped countless
+                    students find their perfect academic fit and achieve their goals abroad.
+                </p>
 
-.logo h1 {
-font-size: 1.5rem;
-font-weight: 800;
-color: var(--primary-dark);
-}
+                <div style="margin-top: 30px; display: flex; justify-content: center;">
+                    <a href="founders.html" class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Meet Our Founders
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
 
-nav {
-display: flex;
-gap: 30px;
-}
+            </div>
+            <div class="why-choose">
+                <h3 class="subsection-title" data-aos="fade-up">Why Choose E-Reach?</h3>
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <span class="material-symbols-outlined">verified_user</span>
+                        </div>
+                        <h4>Honest Guidance</h4>
+                        <p>We prioritize your best interests with transparent, ethical advice.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <span class="material-symbols-outlined">person</span>
+                        </div>
+                        <h4>Personalized Approach</h4>
+                        <p>Every student is unique, and so is our support for your journey.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <span class="material-symbols-outlined">timeline</span>
+                        </div>
+                        <h4>Step-by-Step Support</h4>
+                        <p>From start to finish, we're with you at every stage of the process.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <span class="material-symbols-outlined">trending_up</span>
+                        </div>
+                        <h4>Proven Success</h4>
+                        <p>Our track record speaks for itself—satisfied students studying worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.nav-link {
-text-decoration: none;
-color: var(--text-dark);
-font-weight: 500;
-font-size: 1rem;
-transition: color 0.2s ease;
-}
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-title">Our Services</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">school</span>
+                    </div>
+                    <h3>Choosing the Right Major</h3>
+                    <p>Discover programs that align with your interests, strengths, and career aspirations.</p>
+                    <a href="services.html#major" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">apartment</span>
+                    </div>
+                    <h3>University Recommendations</h3>
+                    <p>Get personalized suggestions based on your academic profile and preferences.</p>
+                    <a href="services.html#university" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">description</span>
+                    </div>
+                    <h3>Documents Preparation</h3>
+                    <p>Expert assistance with essays, transcripts, and all required application materials.</p>
+                    <a href="services.html#documents" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">send</span>
+                    </div>
+                    <h3>Application Submission</h3>
+                    <p>Ensure your applications are complete, polished, and submitted on time.</p>
+                    <a href="services.html#application" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">flight</span>
+                    </div>
+                    <h3>Travel Assistance</h3>
+                    <p>Get help with travel arrangements and preparing for your journey abroad.</p>
+                    <a href="services.html#travel" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">home</span>
+                    </div>
+                    <h3>Settlement Support</h3>
+                    <p>Support with accommodation and settling into your new home and environment.</p>
+                    <a href="services.html#settlement" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.nav-link:hover {
-color: var(--primary-color);
-}
+    <section id="contact" class="contact" style="background-color: var(--bg-light); padding: 80px 20px;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
+                <span class="section-label" style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Get In Touch</span>
+                <h2 class="section-title" style="font-size: 2.5rem; color: var(--text-dark); margin-top: 10px;">Contact Us</h2>
+                <div class="title-underline" style="width: 60px; height: 4px; background: var(--primary-color); margin: 15px auto;"></div>
+                <p style="max-width: 600px; margin: 20px auto; color: var(--text-medium);">
+                    Our expert consultants are ready to guide your university application journey. Reach out and let's start together.
+                </p>
+            </div>
 
-/* ==========================================================================
-BUTTONS
-========================================================================== */
-.btn-primary, .cta-button {
-background-color: var(--primary-color);
-color: var(--white);
-padding: 12px 28px;
-border-radius: 50px;
-font-weight: 600;
-text-decoration: none;
-transition: all 0.3s ease;
-border: 2px solid transparent;
-cursor: pointer;
-display: inline-flex;
-align-items: center;
-gap: 8px;
-justify-content: center;
-}
+            <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: start;">
 
-.btn-primary:hover, .cta-button:hover {
-background-color: var(--primary-dark);
-transform: translateY(-2px);
-box-shadow: 0 10px 20px rgba(19, 109, 236, 0.2);
-}
+                <div class="contact-form-wrapper" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" data-aos="fade-right">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-dark);">Send Us a Message</h3>
 
-/* ==========================================================================
-HERO SECTION (Apple Sticky Effect)
-========================================================================== */
-.hero {
-/* Freezes the background while the rest of the site slides over it */
-position: sticky;
-top: 0;
-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-color: white;
-z-index: 1; /* Puts it at the very back */
-background: linear-gradient(-45deg, #0a4297, #136dec, #00d2ff, #2980b9);
-background-size: 400% 400%;
-animation: gradientBG 15s ease infinite;
-overflow: hidden;
-}
+                    <form id="mainContactForm" class="booking-form">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-name" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Full Name *</label>
+                            <input type="text" id="contact-name" name="name" required placeholder="Enter your full name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-phone" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">WhatsApp Number *</label>
+                            <input type="tel" id="contact-phone" name="phone" required placeholder="+973 XXXX XXXX" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-email" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Email (Optional)</label>
+                            <input type="email" id="contact-email" name="email" placeholder="your.email@example.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
 
-.hero-content {
-position: relative;
-z-index: 2;
-margin-top: 50px; /* Leaves room for the header */
-}
+                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                            <div class="form-group">
+                                <label for="contact-date" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Preferred Date *</label>
+                                <input type="date" id="contact-date" name="date" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: white;">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-time" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Preferred Time *</label>
+                                <select id="contact-time" name="time" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: white;">
+                                    <option value="">Select time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
 
-@keyframes gradientBG {
-0% { background-position: 0% 50%; }
-50% { background-position: 100% 50%; }
-100% { background-position: 0% 50%; }
-}
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-service" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Service Interested In *</label>
+                            <select id="contact-service" name="service" required onchange="updateMainButtonPrice()" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: white;">
+                                <option value="" disabled selected>Select service</option>
+                                <option value="Initial Consultation" data-price="20">Initial Consultation - 20 BHD</option>
+                                <option value="Private Tutoring" data-price="40">Private Tutoring - From 40 BHD</option>
+                                <option value="Membership Program" data-price="50">Membership Program - From 50 BHD</option>
+                                <option value="Custom Service" data-price="0">Custom Service - Request Quote</option>
+                            </select>
+                        </div>
 
-.badge {
-background: rgba(255, 255, 255, 0.2);
-padding: 8px 20px;
-border-radius: 50px;
-font-size: 0.9rem;
-font-weight: 600;
-display: inline-block;
-margin-bottom: 20px;
-backdrop-filter: blur(5px);
-}
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-notes" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Additional Notes (Optional)</label>
+                            <textarea id="contact-notes" name="notes" rows="4" placeholder="Any specific questions or requirements?" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
 
-.hero-title {
-font-size: 4.5rem;
-font-weight: 900;
-line-height: 1.1;
-margin-bottom: 20px;
-}
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 20px;">
+                            <input type="checkbox" id="contact-consent-home" name="consent" required style="width: 20px; height: 20px; margin-top: 3px;">
+                            <label for="contact-consent-home" style="font-size: 0.9rem; line-height: 1.4; color: var(--text-medium);">
+                                I have read and agree to the <a href="privacy.html" target="_blank" style="color: var(--primary-color);">Privacy Policy</a> and consent to the processing of my personal data.
+                            </label>
+                        </div>
 
-.hero-description {
-font-size: 1.25rem;
-max-width: 800px;
-margin: 0 auto 40px;
-opacity: 0.9;
-}
+                        <button type="submit" id="main-checkout-btn" class="submit-btn" style="width: 100%; padding: 14px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background 0.3s;">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span id="btn-text">Confirm Booking</span>
+                        </button>
+                    </form>
+                </div>
 
-.flying-plane {
-position: absolute;
-font-size: 400px;
-color: rgba(255, 255, 255, 0.05);
-z-index: 1;
-top: -50px;
-right: -100px;
-transform: rotate(-45deg);
-}
+                <div class="contact-info" style="display: flex; flex-direction: column; gap: 20px;" data-aos="fade-left">
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start;">
+                        <div class="info-icon" style="background: rgba(19, 109, 236, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                            <span class="material-symbols-outlined">chat</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 style="margin-bottom: 5px; font-size: 1.1rem; color: var(--text-dark);">WhatsApp</h3>
+                            <p style="color: var(--text-medium); margin-bottom: 5px; font-size: 0.9rem;">Chat with us directly for quick responses</p>
+                            <a href="https://wa.me/97366356056" target="_blank" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 1.1rem;">+973 6635 6056</a>
+                        </div>
+                    </div>
 
-/* ==========================================================================
-ABOUT SECTION (The Sliding Curtain)
-========================================================================== */
-.about {
-position: relative;
-z-index: 2; /* Slides IN FRONT of the sticky hero */
-background-color: var(--bg-light);
-padding: 100px 0;
-/* Soft curved top edges */
-border-radius: 40px 40px 0 0;
-box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.08);
-}
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start;">
+                        <div class="info-icon" style="background: rgba(19, 109, 236, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 style="margin-bottom: 5px; font-size: 1.1rem; color: var(--text-dark);">Office Location</h3>
+                            <p style="color: var(--text-medium); font-size: 0.9rem;">Manama, Kingdom of Bahrain</p>
+                        </div>
+                    </div>
 
-/* ==========================================================================
-SECTION HEADERS
-========================================================================== */
-.section-label {
-color: var(--primary-color);
-font-weight: 700;
-text-transform: uppercase;
-letter-spacing: 1.5px;
-display: block;
-margin-bottom: 10px;
-}
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start;">
+                        <div class="info-icon" style="background: rgba(19, 109, 236, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                            <span class="material-symbols-outlined">schedule</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 style="margin-bottom: 5px; font-size: 1.1rem; color: var(--text-dark);">Working Hours</h3>
+                            <p style="color: var(--text-medium); font-size: 0.9rem; line-height: 1.6;">
+                                Sunday - Thursday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 2:00 PM<br>
+                                Friday: Closed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.section-title {
-font-size: 2.5rem;
-color: var(--text-dark);
-margin-bottom: 15px;
-}
+    <section class="universities" style="padding: 60px 0; background: white;" data-aos="fade-up">
+        <p style="text-align: center; font-weight: 700; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px;">
+            Our Students Have Been Placed At
+        </p>
 
-.title-underline {
-width: 60px;
-height: 4px;
-background: var(--primary-color);
-margin: 0 auto 30px;
-}
+        <div class="ticker-wrap">
+            <div class="ticker-track">
+                <div class="ticker-item">
+                    <img src="leeds.png" alt="Leeds Logo" class="uni-logo">
+                    <span>Leeds Beckett University</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="rcsi.jpg" alt="RCSI Logo" class="uni-logo">
+                    <span>RCSI</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="tae-logo.png" alt="TAE Logo" class="uni-logo" onerror="this.style.display='none'">
+                    <span>TAE Aviation Academy</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="alex.png" alt="Alexandria Logo" class="uni-logo">
+                    <span>Alexandria University</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="Hochschule-Karlsruhe.png" alt="Karlsruhe Logo" class="uni-logo">
+                    <span>Karlsruhe University of Applied Sciences</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="University_of_Bahrain_logo.png" alt="UOB Logo" class="uni-logo">
+                    <span>University of Bahrain</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="Bahrain_Polytechnic_Logo.svg" alt="Bahrain Poly Logo" class="uni-logo">
+                    <span>Bahrain Polytechnic</span>
+                </div>
 
-.section-header {
-text-align: center;
-}
+                <div class="ticker-item">
+                    <img src="leeds.png" alt="Leeds Logo" class="uni-logo">
+                    <span>Leeds Beckett University</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="rcsi.jpg" alt="RCSI Logo" class="uni-logo">
+                    <span>RCSI</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="tae-logo.png" alt="TAE Logo" class="uni-logo" onerror="this.style.display='none'">
+                    <span>TAE Aviation Academy</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="alex.png" alt="Alexandria Logo" class="uni-logo">
+                    <span>Alexandria University</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="Hochschule-Karlsruhe.png" alt="Karlsruhe Logo" class="uni-logo">
+                    <span>Karlsruhe University of Applied Sciences</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="University_of_Bahrain_logo.png" alt="UOB Logo" class="uni-logo">
+                    <span>University of Bahrain</span>
+                </div>
+                <div class="ticker-item">
+                    <img src="Bahrain_Polytechnic_Logo.svg" alt="Bahrain Poly Logo" class="uni-logo">
+                    <span>Bahrain Polytechnic</span>
+                </div>
+            </div> </div> </section>
+</main>
 
-.about-text {
-text-align: center;
-max-width: 800px;
-margin: 0 auto;
-font-size: 1.2rem;
-color: var(--text-medium);
-}
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="material-symbols-outlined">school</span>
+                    <h2>E-Reach Consulting</h2>
+                </div>
+                <p>Helping students achieve their international education dreams</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="#services">Major Selection</a>
+                    <a href="#services">University Recommendations</a>
+                    <a href="#services">Application Support</a>
+                    <a href="#services">Settlement Assistance</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p class="footer-contact">
+                        <span class="material-symbols-outlined">call</span>
+                        +973 6635 6056
+                    </p>
+                    <p class="footer-contact">
+                        <span class="material-symbols-outlined">location_on</span>
+                        Manama, Bahrain
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 E-Reach Consulting. All rights reserved.
+                <span style="margin: 0 10px;">|</span>
+                <a href="privacy.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Privacy Policy</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="terms.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Terms & Conditions</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="refund.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Refund Policy</a>
+            </p>
+        </div>
+    </div>
+</footer>
 
-.why-choose {
-margin-top: 80px;
-}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true,
+        offset: 100
+    });
+</script>
 
-.subsection-title {
-text-align: center;
-font-size: 2rem;
-margin-bottom: 40px;
-}
+<script>
+    function updateMainButtonPrice() {
+        const select = document.getElementById("contact-service");
+        const price = select.options[select.selectedIndex].getAttribute("data-price");
+        const btnText = document.getElementById("btn-text");
 
-/* ==========================================================================
-FEATURES & SERVICES GRIDS
-========================================================================== */
-.features-grid, .services-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 30px;
-}
+        if (price > 0) {
+            btnText.innerText = `Pay ${price} BHD & Book`;
+        } else if (price == 0) {
+            btnText.innerText = `Request Custom Quote`;
+        } else {
+            btnText.innerText = `Confirm Booking`;
+        }
+    }
 
-.services {
-position: relative;
-background-color: white;
-padding: 100px 0;
-z-index: 2; /* Keeps it above the hero */
-overflow: hidden; /* Keeps the plane inside */
-}
+    document.getElementById("mainContactForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
 
-/* The Animated Plane inside Services */
-#scroll-plane {
-position: absolute;
-top: 30%;
-left: -200px; /* Starts off-screen */
-font-size: 150px;
-color: rgba(19, 109, 236, 0.04); /* Very faint watermark */
-z-index: 0;
-pointer-events: none;
-transform: rotate(15deg);
-}
+        const form = event.target;
+        const btn = document.getElementById("main-checkout-btn");
+        const btnText = document.getElementById("btn-text");
+        const originalText = btnText.innerText;
 
-.service-card {
-background: var(--bg-light);
-padding: 40px;
-border-radius: 20px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-position: relative;
-z-index: 1; /* Puts it above the background plane */
-}
+        const select = document.getElementById("contact-service");
+        const price = select.options[select.selectedIndex].getAttribute("data-price");
+        const name = form.querySelector('[name="name"]')?.value || "Student";
+        const email = form.querySelector('[name="email"]')?.value || "student@ereach.education";
+        const phone = form.querySelector('[name="phone"]')?.value || "N/A";
 
-.feature-card {
-background: white;
-padding: 40px;
-border-radius: 20px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        // Make button look like it's loading
+        btn.style.opacity = "0.7";
+        btn.style.pointerEvents = "none";
+        btnText.innerText = "Processing...";
 
-.feature-card:hover, .service-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 20px 40px rgba(19, 109, 236, 0.1); /* Blue glow */
-}
+        try {
+            // Send the email data first
+            await fetch('/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    service: select.value
+                })
+            });
 
-.feature-icon, .service-icon {
-width: 60px;
-height: 60px;
-background: rgba(19, 109, 236, 0.1);
-color: var(--primary-color);
-border-radius: 15px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 20px;
-}
+            // Handle Payment
+            if (price == 0) {
+                alert("Request sent successfully! We will contact you on WhatsApp shortly to discuss your custom plan.");
+                form.reset();
+                updateMainButtonPrice();
+                btn.style.opacity = "1";
+                btn.style.pointerEvents = "auto";
+            } else {
+                const payResponse = await fetch('/create-payment', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ amount: price, name: name, email: email })
+                });
 
-.feature-icon span, .service-icon span {
-font-size: 30px;
-}
+                const payData = await payResponse.json();
 
-.service-link {
-display: inline-flex;
-align-items: center;
-gap: 5px;
-margin-top: 15px;
-color: var(--primary-color);
-text-decoration: none;
-font-weight: 600;
-}
-
-/* ==========================================================================
-BULLETPROOF UNIVERSITY TICKER
-========================================================================== */
-.universities {
-position: relative;
-z-index: 2;
-overflow: hidden;
-width: 100vw;
-max-width: 100%;
-}
-
-.ticker-wrap {
-width: 100%;
-overflow: hidden;
-padding: 40px 0;
-}
-
-.ticker-track {
-display: flex;
-flex-wrap: nowrap;
-align-items: center;
-gap: 80px;
-width: max-content;
-animation: scrollTicker 35s linear infinite;
-}
-
-.ticker-track:hover {
-animation-play-state: paused;
-}
-
-.ticker-item {
-display: flex;
-align-items: center;
-gap: 20px;
-white-space: nowrap;
-flex-shrink: 0;
-}
-
-.ticker-item img.uni-logo {
-height: 50px;
-width: auto;
-max-width: none;
-object-fit: contain;
-filter: grayscale(100%) opacity(0.6);
-transition: all 0.4s ease;
-}
-
-.ticker-item:hover img.uni-logo {
-filter: grayscale(0%) opacity(1);
-transform: scale(1.05);
-}
-
-.ticker-item span {
-font-weight: 600;
-font-size: 1.1rem;
-color: var(--text-medium);
-}
-
-@keyframes scrollTicker {
-0% { transform: translateX(0); }
-100% { transform: translateX(-50%); }
-}
-
-/* ==========================================================================
-FOOTER
-========================================================================== */
-footer {
-position: relative;
-z-index: 2;
-background: var(--text-dark);
-color: white;
-padding: 80px 0 30px;
-}
-
-.footer-content {
-display: grid;
-grid-template-columns: 1.5fr 2fr;
-gap: 60px;
-margin-bottom: 60px;
-}
-
-.footer-brand .logo {
-display: flex;
-align-items: center;
-gap: 10px;
-margin-bottom: 20px;
-}
-
-.footer-links {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 30px;
-}
-
-.footer-column h4 {
-margin-bottom: 20px;
-color: var(--secondary-color);
-}
-
-.footer-column a, .footer-column p {
-color: rgba(255, 255, 255, 0.7);
-text-decoration: none;
-display: block;
-margin-bottom: 10px;
-transition: color 0.3s;
-}
-
-.footer-column a:hover {
-color: var(--white);
-}
-
-.footer-bottom {
-text-align: center;
-padding-top: 30px;
-border-top: 1px solid rgba(255, 255, 255, 0.1);
-color: rgba(255, 255, 255, 0.5);
-font-size: 0.9rem;
-}
-
-/* ==========================================================================
-MOBILE RESPONSIVENESS
-========================================================================== */
-@media (max-width: 992px) {
-nav { display: none; }
-.hero-title { font-size: 3rem; }
-.footer-content { grid-template-columns: 1fr; gap: 40px; }
-.footer-links { grid-template-columns: 1fr 1fr; }
-.contact-grid { grid-template-columns: 1fr !important; }
-}
-
-@media (max-width: 768px) {
-.hero-title { font-size: 2.5rem; }
-.footer-links { grid-template-columns: 1fr; text-align: center; }
-.footer-brand { text-align: center; }
-.footer-brand .logo { justify-content: center; }
-}
+                if (payData.checkoutUrl) {
+                    window.location.href = payData.checkoutUrl;
+                } else {
+                    alert("Payment link failed to generate, but we received your booking request! We will contact you shortly.");
+                    btnText.innerText = originalText;
+                    btn.style.opacity = "1";
+                    btn.style.pointerEvents = "auto";
+                }
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Something went wrong. Please check your connection and try again.");
+            btnText.innerText = originalText;
+            btn.style.opacity = "1";
+            btn.style.pointerEvents = "auto";
+        }
+    });
+</script>
+<script>
+    AOS.init({
+        once: true,
+        offset: 120, // Wait until the element is a bit higher on screen
+        duration: 1000, // Make it take a full second (very cinematic)
+        easing: 'cubic-bezier(0.25, 1, 0.5, 1)', // Apple's signature smooth math
+        delay: 100 // Slight pause before it starts
+    });
+</script>
+</body>
+</html>
