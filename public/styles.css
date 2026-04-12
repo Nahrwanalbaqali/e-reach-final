@@ -1061,69 +1061,66 @@ footer {
     }
 }
 
-/* =========================================
-   INFINITE SCROLLING UNIVERSITIES TICKER
-========================================= */
+/* --- INFINITE UNIVERSITY TICKER --- */
+.universities {
+    overflow: hidden; /* Hides anything outside the screen */
+    width: 100%;
+}
+
 .ticker-wrap {
     width: 100%;
-    overflow: hidden; /* Hides the text that goes off the edge of the screen */
+    overflow: hidden;
     padding: 20px 0;
     box-sizing: border-box;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Fades the edges out nicely */
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .ticker-track {
-    display: inline-flex;
-    gap: 80px; /* Space between each university */
-    padding-right: 80px;
-    animation: tickerScroll 20s linear infinite; /* 20s speed, scrolls forever */
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 80px; /* Beautiful, wide spacing between universities */
+    width: max-content; /* CRITICAL: Forces them into one infinite row! */
+    animation: scrollTicker 35s linear infinite; /* Smooth, continuous scroll */
 }
 
+/* Pause the scrolling when the user hovers over it */
 .ticker-track:hover {
-    animation-play-state: paused; /* Pauses the animation when someone hovers over it! */
+    animation-play-state: paused;
 }
 
 .ticker-item {
-    display: flex; /* This puts the logo and text side-by-side */
+    display: flex;
     align-items: center;
-    gap: 15px; /* Adds a nice space between the logo and text */
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #8c98a4;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s;
-    cursor: default;
+    gap: 20px;
+    white-space: nowrap; /* CRITICAL: Keeps the logo and text side-by-side */
 }
 
-.ticker-item:hover {
-    color: var(--primary-color);
-}
-
-/* MATCHED NAME: uni-logo, WITH STRICT HEIGHT RULES */
-.uni-logo {
-    height: 50px !important;
-    max-height: 50px !important; /* Forces giant images like Karlsruhe to shrink */
-    width: auto !important;
-    max-width: 180px !important; /* Stops super-wide logos from taking over */
+.ticker-item img.uni-logo {
+    height: 45px; /* Locks all logos to the exact same height */
+    width: auto;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: all 0.3s ease;
+    /* Apple-style premium effect: Grayscale by default */
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.4s ease;
 }
 
-.ticker-item:hover .uni-logo {
-    filter: grayscale(0%); /* Brings back full color on hover! */
-    opacity: 1;
+/* Bring the color back when hovered! */
+.ticker-item:hover img.uni-logo {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
 }
 
-@keyframes tickerScroll {
+.ticker-item span {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    letter-spacing: 0.5px;
+}
+
+/* The actual movement animation */
+@keyframes scrollTicker {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
-
 /* =========================================
    MOBILE RESPONSIVENESS (PHONES & TABLETS)
 ========================================= */
