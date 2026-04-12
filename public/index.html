@@ -514,5 +514,14 @@
         }
     });
 </script>
+<script>
+    AOS.init({
+        once: true,
+        offset: 120, // Wait until the element is a bit higher on screen
+        duration: 1000, // Make it take a full second (very cinematic)
+        easing: 'cubic-bezier(0.25, 1, 0.5, 1)', // Apple's signature smooth math
+        delay: 100 // Slight pause before it starts
+    });
+</script>
 </body>
 </html>

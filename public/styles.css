@@ -50,14 +50,19 @@ body {
    HEADER & NAVIGATION
    ============================================ */
 header {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
+    position: fixed; /* Keeps it at the top */
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    box-shadow: var(--shadow-sm);
+    /* The Apple Glass Effect */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
+
 
 .header-content {
     display: flex;
