@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Reach Consulting - Study Abroad Guidance</title>
     <meta name="description" content="E-Reach Consulting helps students study abroad with honest, personalized, step-by-step guidance.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -14,9 +14,9 @@
 <header>
     <div class="container">
         <div class="header-content">
-            <a href="index.html" class="logo" style="text-decoration: none;">
-                <img src="logo.png" alt="E-Reach Logo" class="logo-img">
-                <h1>E-Reach Consulting</h1>
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 15px; background: transparent; border: none; padding: 0;">
+                <img src="logo.png" alt="E-Reach Logo" style="height: 80px; width: auto; max-height: none; border-radius: 0; background: transparent; mix-blend-mode: multiply;">
+                <h1 style="margin: 0;">E-Reach Consulting</h1>
             </a>
 
             <nav>
@@ -27,20 +27,22 @@
                 <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
 
-            <a href="index.html#contact" class="btn-primary">Book Consultation</a>
-        </div>
-    </div>
+            <a href="index.html#contact" class="btn-primary" style="text-decoration: none;">Book Consultation</a>    </div>
 </header>
 
 <main>
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
-                <h2 class="hero-title">Your Gateway to <br>Global Education.</h2>
+    <section id="home" class="hero" style="position: relative; overflow: hidden; background: linear-gradient(-45deg, #0a4297, #136dec, #00d2ff, #2980b9); background-size: 400% 400%; animation: gradientBG 15s ease infinite;">
+
+        <span class="material-symbols-outlined flying-plane">flight</span>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+                <span class="badge">Your Trusted Partner Since Day One</span>
+                <h2 class="hero-title">Your Gateway to Global Education</h2>
                 <p class="hero-description">
-                    Honest, personalized, step-by-step guidance to make your international education dreams a reality.
+                    We help students study abroad by providing honest, personalized, step-by-step guidance to make your international education dreams a reality.
                 </p>
-                <a href="#contact" class="cta-button" data-aos="zoom-in" data-aos-delay="300">
+                <a href="#contact" class="cta-button">
                     Get Started Today
                     <span class="material-symbols-outlined">arrow_forward</span>
                 </a>
@@ -51,10 +53,26 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Who We Are.</h2>
+                <span class="section-label">Who We Are</span>
+                <h2 class="section-title">About E-Reach Consulting</h2>
+                <div class="title-underline"></div>
             </div>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+                <p class="about-text">
+                    With years of experience and a commitment to honest guidance, we've helped countless
+                    students find their perfect academic fit and achieve their goals abroad.
+                </p>
 
+                <div style="margin-top: 30px; display: flex; justify-content: center;">
+                    <a href="founders.html" class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Meet Our Founders
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+
+            </div>
             <div class="why-choose">
+                <h3 class="subsection-title" data-aos="fade-up">Why Choose E-Reach?</h3>
                 <div class="features-grid">
                     <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="feature-icon">
@@ -77,6 +95,13 @@
                         <h4>Step-by-Step Support</h4>
                         <p>From start to finish, we're with you at every stage of the process.</p>
                     </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <span class="material-symbols-outlined">trending_up</span>
+                        </div>
+                        <h4>Proven Success</h4>
+                        <p>Our track record speaks for itself—satisfied students studying worldwide.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,113 +110,264 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">What We Offer.</h2>
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-title">Our Services</h2>
+                <div class="title-underline"></div>
             </div>
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon"><span class="material-symbols-outlined">school</span></div>
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">school</span>
+                    </div>
                     <h3>Choosing the Right Major</h3>
                     <p>Discover programs that align with your interests, strengths, and career aspirations.</p>
-                    <a href="services.html#major" class="service-link">Learn More <span class="material-symbols-outlined">arrow_forward</span></a>
+                    <a href="services.html#major" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon"><span class="material-symbols-outlined">apartment</span></div>
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">apartment</span>
+                    </div>
                     <h3>University Recommendations</h3>
                     <p>Get personalized suggestions based on your academic profile and preferences.</p>
-                    <a href="services.html#university" class="service-link">Learn More <span class="material-symbols-outlined">arrow_forward</span></a>
+                    <a href="services.html#university" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon"><span class="material-symbols-outlined">description</span></div>
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">description</span>
+                    </div>
                     <h3>Documents Preparation</h3>
                     <p>Expert assistance with essays, transcripts, and all required application materials.</p>
-                    <a href="services.html#documents" class="service-link">Learn More <span class="material-symbols-outlined">arrow_forward</span></a>
+                    <a href="services.html#documents" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">send</span>
+                    </div>
+                    <h3>Application Submission</h3>
+                    <p>Ensure your applications are complete, polished, and submitted on time.</p>
+                    <a href="services.html#application" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">flight</span>
+                    </div>
+                    <h3>Travel Assistance</h3>
+                    <p>Get help with travel arrangements and preparing for your journey abroad.</p>
+                    <a href="services.html#travel" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <span class="material-symbols-outlined">home</span>
+                    </div>
+                    <h3>Settlement Support</h3>
+                    <p>Support with accommodation and settling into your new home and environment.</p>
+                    <a href="services.html#settlement" class="service-link">
+                        Learn More
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="universities" data-aos="fade-in" data-aos-duration="1500">
+    <section id="contact" class="contact" style="background-color: var(--bg-light); padding: 80px 20px;">
         <div class="container">
-            <div class="section-header" style="margin-bottom: 2rem;">
-                <h2 class="section-title" style="font-size: 2rem; text-align: center;">Our Students Have Been Placed At</h2>
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
+                <span class="section-label" style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Get In Touch</span>
+                <h2 class="section-title" style="font-size: 2.5rem; color: var(--text-dark); margin-top: 10px;">Contact Us</h2>
+                <div class="title-underline" style="width: 60px; height: 4px; background: var(--primary-color); margin: 15px auto;"></div>
+                <p style="max-width: 600px; margin: 20px auto; color: var(--text-medium);">
+                    Our expert consultants are ready to guide your university application journey. Reach out and let's start together.
+                </p>
+            </div>
+
+            <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: start;">
+
+                <div class="contact-form-wrapper" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" data-aos="fade-right">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-dark);">Send Us a Message</h3>
+
+                    <form id="mainContactForm" class="booking-form">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-name" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Full Name *</label>
+                            <input type="text" id="contact-name" name="name" required placeholder="Enter your full name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-phone" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">WhatsApp Number *</label>
+                            <input type="tel" id="contact-phone" name="phone" required placeholder="+973 XXXX XXXX" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-email" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Email (Optional)</label>
+                            <input type="email" id="contact-email" name="email" placeholder="your.email@example.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
+                        </div>
+
+                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                            <div class="form-group">
+                                <label for="contact-date" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Preferred Date *</label>
+                                <input type="date" id="contact-date" name="date" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: white;">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-time" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Preferred Time *</label>
+                                <select id="contact-time" name="time" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: white;">
+                                    <option value="">Select time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-service" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Service Interested In *</label>
+                            <select id="contact-service" name="service" required onchange="updateMainButtonPrice()" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: white;">
+                                <option value="" disabled selected>Select service</option>
+                                <option value="Initial Consultation" data-price="20">Initial Consultation - 20 BHD</option>
+                                <option value="Private Tutoring" data-price="40">Private Tutoring - From 40 BHD</option>
+                                <option value="Membership Program" data-price="50">Membership Program - From 50 BHD</option>
+                                <option value="Custom Service" data-price="0">Custom Service - Request Quote</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact-notes" style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-dark);">Additional Notes (Optional)</label>
+                            <textarea id="contact-notes" name="notes" rows="4" placeholder="Any specific questions or requirements?" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+
+                        <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 20px;">
+                            <input type="checkbox" id="contact-consent-home" name="consent" required style="width: 20px; height: 20px; margin-top: 3px;">
+                            <label for="contact-consent-home" style="font-size: 0.9rem; line-height: 1.4; color: var(--text-medium);">
+                                I have read and agree to the <a href="privacy.html" target="_blank" style="color: var(--primary-color);">Privacy Policy</a> and consent to the processing of my personal data.
+                            </label>
+                        </div>
+
+                        <button type="submit" id="main-checkout-btn" class="submit-btn" style="width: 100%; padding: 14px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background 0.3s;">
+                            <span class="material-symbols-outlined">check_circle</span>
+                            <span id="btn-text">Confirm Booking</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info" style="display: flex; flex-direction: column; gap: 20px;" data-aos="fade-left">
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start;">
+                        <div class="info-icon" style="background: rgba(19, 109, 236, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                            <span class="material-symbols-outlined">chat</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 style="margin-bottom: 5px; font-size: 1.1rem; color: var(--text-dark);">WhatsApp</h3>
+                            <p style="color: var(--text-medium); margin-bottom: 5px; font-size: 0.9rem;">Chat with us directly for quick responses</p>
+                            <a href="https://wa.me/97366356056" target="_blank" style="color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 1.1rem;">+973 6635 6056</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start;">
+                        <div class="info-icon" style="background: rgba(19, 109, 236, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 style="margin-bottom: 5px; font-size: 1.1rem; color: var(--text-dark);">Office Location</h3>
+                            <p style="color: var(--text-medium); font-size: 0.9rem;">Manama, Kingdom of Bahrain</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card" style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start;">
+                        <div class="info-icon" style="background: rgba(19, 109, 236, 0.1); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                            <span class="material-symbols-outlined">schedule</span>
+                        </div>
+                        <div class="info-content">
+                            <h3 style="margin-bottom: 5px; font-size: 1.1rem; color: var(--text-dark);">Working Hours</h3>
+                            <p style="color: var(--text-medium); font-size: 0.9rem; line-height: 1.6;">
+                                Sunday - Thursday: 9:00 AM - 6:00 PM<br>
+                                Saturday: 10:00 AM - 2:00 PM<br>
+                                Friday: Closed
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+    <section class="universities" style="padding: 60px 0; background: white;" data-aos="fade-up">
+        <p style="text-align: center; font-weight: 700; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px;">
+            Our Students Have Been Placed At
+        </p>
+
         <div class="ticker-wrap">
             <div class="ticker-track">
                 <div class="ticker-item">
-                    <img src="leeds.png" alt="Leeds" class="uni-logo"><span>Leeds Beckett University</span>
+                    <img src="leeds.png" alt="Leeds Logo" class="uni-logo">
+                    <span>Leeds Beckett University</span>
                 </div>
                 <div class="ticker-item">
-                    <img src="rcsi.jpg" alt="RCSI" class="uni-logo"><span>RCSI</span>
+                    <img src="rcsi.jpg" alt="RCSI Logo" class="uni-logo">
+                    <span>RCSI</span>
                 </div>
                 <div class="ticker-item">
-                    <img src="tae-logo.png" alt="TAE" class="uni-logo"><span>TAE Aviation Academy</span>
+                    <img src="tae-logo.png" alt="TAE Logo" class="uni-logo" onerror="this.style.display='none'">
+                    <span>TAE Aviation Academy</span>
                 </div>
                 <div class="ticker-item">
-                    <img src="alex.png" alt="Alexandria" class="uni-logo"><span>Alexandria University</span>
-                </div>
-
-                <div class="ticker-item">
-                    <img src="leeds.png" alt="Leeds" class="uni-logo"><span>Leeds Beckett University</span>
+                    <img src="alex.png" alt="Alexandria Logo" class="uni-logo">
+                    <span>Alexandria University</span>
                 </div>
                 <div class="ticker-item">
-                    <img src="rcsi.jpg" alt="RCSI" class="uni-logo"><span>RCSI</span>
+                    <img src="Hochschule-Karlsruhe.png" alt="Karlsruhe Logo" class="uni-logo">
+                    <span>Karlsruhe University of Applied Sciences</span>
                 </div>
                 <div class="ticker-item">
-                    <img src="tae-logo.png" alt="TAE" class="uni-logo"><span>TAE Aviation Academy</span>
+                    <img src="University_of_Bahrain_logo.png" alt="UOB Logo" class="uni-logo">
+                    <span>University of Bahrain</span>
                 </div>
                 <div class="ticker-item">
-                    <img src="alex.png" alt="Alexandria" class="uni-logo"><span>Alexandria University</span>
+                    <img src="Bahrain_Polytechnic_Logo.svg" alt="Bahrain Poly Logo" class="uni-logo">
+                    <span>Bahrain Polytechnic</span>
                 </div>
+                <img src="leeds.png" alt="Leeds Logo" class="uni-logo">
+                <span>Leeds Beckett University</span>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Get In Touch.</h2>
-                <p style="color: var(--text-medium); margin-top: 1rem;">Let's start your university application journey together.</p>
+            <div class="ticker-item">
+                <img src="rcsi.jpg" alt="RCSI Logo" class="uni-logo">
+                <span>RCSI</span>
             </div>
-
-            <div class="contact-wrapper">
-                <div class="contact-card" data-aos="zoom-in-up" data-aos-duration="1000">
-                    <div class="contact-icon-box">
-                        <span class="material-symbols-outlined">chat</span>
-                    </div>
-                    <div style="flex-grow: 1;">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Chat with us on WhatsApp</h3>
-                        <p style="color: var(--text-medium); margin-bottom: 1rem;">The fastest way to get your questions answered.</p>
-                        <a href="https://wa.me/97366356056" target="_blank" class="whatsapp-link">
-                            +973 6635 6056
-                        </a>
-                    </div>
-                </div>
-
-                <br><br>
-
-                <form id="mainContactForm" class="booking-form" data-aos="fade-up" data-aos-delay="200">
-                    <div class="form-group">
-                        <label>Full Name *</label>
-                        <input type="text" name="name" required placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label>WhatsApp Number *</label>
-                        <input type="tel" name="phone" required placeholder="+973 XXXX XXXX">
-                    </div>
-                    <div class="form-group">
-                        <label>Service Interested In *</label>
-                        <select id="contact-service" name="service" required onchange="updateMainButtonPrice()">
-                            <option value="" disabled selected>Select service</option>
-                            <option value="Initial Consultation" data-price="20">Initial Consultation - 20 BHD</option>
-                            <option value="Membership Program" data-price="50">Membership Program - From 50 BHD</option>
-                            <option value="Custom Service" data-price="0">Custom Service - Request Quote</option>
-                        </select>
-                    </div>
-                    <button type="submit" id="main-checkout-btn" class="submit-btn">
-                        <span id="btn-text">Confirm Booking</span>
-                    </button>
-                </form>
+            <div class="ticker-item">
+                <img src="tae-logo.png" alt="TAE Logo" class="uni-logo" onerror="this.style.display='none'">
+                <span>TAE Aviation Academy</span>
+            </div>
+            <div class="ticker-item">
+                <img src="alex.png" alt="Alexandria Logo" class="uni-logo">
+                <span>Alexandria University</span>
+            </div>
+            <div class="ticker-item">
+                <img src="Hochschule-Karlsruhe.png" alt="Karlsruhe Logo" class="uni-logo">
+                <span>Karlsruhe University of Applied Sciences</span>
+            </div>
+            <div class="ticker-item">
+                <img src="University_of_Bahrain_logo.png" alt="UOB Logo" class="uni-logo">
+                <span>University of Bahrain</span>
+            </div>
+            <div class="ticker-item">
+                <img src="Bahrain_Polytechnic_Logo.svg" alt="Bahrain Poly Logo" class="uni-logo">
+                <span>Bahrain Polytechnic</span>
+            </div>
             </div>
         </div>
     </section>
@@ -199,8 +375,52 @@
 
 <footer>
     <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="material-symbols-outlined">school</span>
+                    <h2>E-Reach Consulting</h2>
+                </div>
+                <p>Helping students achieve their international education dreams</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="#services">Major Selection</a>
+                    <a href="#services">University Recommendations</a>
+                    <a href="#services">Application Support</a>
+                    <a href="#services">Settlement Assistance</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p class="footer-contact">
+                        <span class="material-symbols-outlined">call</span>
+                        +973 6635 6056
+                    </p>
+                    <p class="footer-contact">
+                        <span class="material-symbols-outlined">location_on</span>
+                        Manama, Bahrain
+                    </p>
+                </div>
+            </div>
+        </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 E-Reach Consulting. All rights reserved.</p>
+            <p>
+                &copy; 2026 E-Reach Consulting. All rights reserved.
+                <span style="margin: 0 10px;">|</span>
+                <a href="privacy.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Privacy Policy</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="terms.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Terms & Conditions</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="refund.html" style="color: rgba(255,255,255,0.7); text-decoration: none;">Refund Policy</a>
+            </p>
         </div>
     </div>
 </footer>
@@ -209,14 +429,11 @@
 <script>
     AOS.init({
         once: true,
-        offset: 50,
-        duration: 1000,
-        easing: 'ease-out-cubic' /* This gives that premium, slow-down-at-the-end feel */
+        offset: 100
     });
 </script>
 
 <script>
-    // Your existing form logic remains exactly the same here
     function updateMainButtonPrice() {
         const select = document.getElementById("contact-service");
         const price = select.options[select.selectedIndex].getAttribute("data-price");
@@ -230,6 +447,72 @@
             btnText.innerText = `Confirm Booking`;
         }
     }
+
+    document.getElementById("mainContactForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const btn = document.getElementById("main-checkout-btn");
+        const btnText = document.getElementById("btn-text");
+        const originalText = btnText.innerText;
+
+        const select = document.getElementById("contact-service");
+        const price = select.options[select.selectedIndex].getAttribute("data-price");
+        const name = form.querySelector('[name="name"]')?.value || "Student";
+        const email = form.querySelector('[name="email"]')?.value || "student@ereach.education";
+        const phone = form.querySelector('[name="phone"]')?.value || "N/A";
+
+        // Make button look like it's loading
+        btn.style.opacity = "0.7";
+        btn.style.pointerEvents = "none";
+        btnText.innerText = "Processing...";
+
+        try {
+            // Send the email data first
+            await fetch('/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    service: select.value
+                })
+            });
+
+            // Handle Payment
+            if (price == 0) {
+                alert("Request sent successfully! We will contact you on WhatsApp shortly to discuss your custom plan.");
+                form.reset();
+                updateMainButtonPrice();
+                btn.style.opacity = "1";
+                btn.style.pointerEvents = "auto";
+            } else {
+                const payResponse = await fetch('/create-payment', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ amount: price, name: name, email: email })
+                });
+
+                const payData = await payResponse.json();
+
+                if (payData.checkoutUrl) {
+                    window.location.href = payData.checkoutUrl;
+                } else {
+                    alert("Payment link failed to generate, but we received your booking request! We will contact you shortly.");
+                    btnText.innerText = originalText;
+                    btn.style.opacity = "1";
+                    btn.style.pointerEvents = "auto";
+                }
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Something went wrong. Please check your connection and try again.");
+            btnText.innerText = originalText;
+            btn.style.opacity = "1";
+            btn.style.pointerEvents = "auto";
+        }
+    });
 </script>
 </body>
 </html>
